@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Belgio - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #2A2A2A; /* Grigio scuro per evocare le Ardenne */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #FFD700; /* Giallo (uno dei colori bandiera belga) */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #000000; /* Nero */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #1A1A1A; /* Grigio molto scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #333333;
+        }
+        nav a {
+            color: #FFD700; /* Giallo */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #1A1A1A; /* Sfondo scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #FFD700; /* Bordo giallo */
+        }
+        .article-content h1 {
+            color: #FFD700; /* Giallo */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #CC0000; /* Rosso */
+        }
+        .article-content h3 {
+            color: #CC0000; /* Rosso */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #CC0000;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #FFD700; /* Giallo */
+            text-decoration: none;
+            border-bottom: 1px dashed #FFD700;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #FFE566;
+            border-color: #FFE566;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #CC0000; /* Rosso */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna ai circuiti" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #CC0000, #FF3333); /* Sfumatura Rossa */
+            color: #FFFFFF; /* Testo bianco per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FF3333, #FF6666);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #1A1A1A; /* Grigio molto scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #333333;
+        }
+
+        /* Stili per le Tabelle */
+        .circuit-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #2A2A2A; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .circuit-stats th, .circuit-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #3A3A3A; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .circuit-stats th {
+            background-color: #CC0000; /* Rosso per l'intestazione */
+            color: #FFFFFF; /* Bianco */
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .circuit-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .circuit-stats tr:nth-child(even) {
+            background-color: #202020; /* Riga pari più scura */
+        }
+        .circuit-stats tr:hover {
+            background-color: #3A3A3A; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .circuit-stats td, .circuit-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .circuit-stats table, .circuit-stats tbody, .circuit-stats thead, .circuit-stats tr, .circuit-stats th, .circuit-stats td {
+                display: block;
+                width: 100%;
+            }
+            .circuit-stats thead {
+                display: none;
+            }
+            .circuit-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #3A3A3A;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .circuit-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .circuit-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #FFD700; /* Giallo per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Gran Premio del Belgio: La Magia di Spa-Francorchamps</h1>
+        <p>Il Circuit de Spa-Francorchamps, situato nelle Ardenne, Belgio, è universalmente riconosciuto come uno dei circuiti più affascinanti, impegnativi e storici del calendario di Formula 1. Con la sua lunghezza imponente, le sue pendenze naturali e una combinazione di curve ad alta velocità e sezioni più tecniche, Spa è un vero test per i piloti e le monoposto, amato per la sua capacità di generare gare imprevedibili e momenti indimenticabili.</p>
+        
+        <p>Il suo layout è leggendario, con curve iconiche come l'Eau Rouge-Raidillon, la Pouhon, la Blanchimont e la Stavelot, che richiedono un coraggio eccezionale e una fiducia totale nella vettura. Il meteo variabile, spesso con piogge improvvise che colpiscono solo una parte del tracciato, aggiunge un ulteriore elemento di drammaticità, rendendo le strategie di gara ancora più complesse e le azioni in pista cariche di adrenalina.</p>
+
+        <img src="https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Belgium_Circuit.png" alt="[Immagine del circuito di Spa-Francorchamps]">
+        
+        <h3>Caratteristiche e Sfide Tecniche</h3>
+        <p>Spa-Francorchamps richiede un setup che bilanci carico aerodinamico per le curve veloci e velocità di punta per i lunghi rettilinei. La gestione degli pneumatici è cruciale, dato il mix di curve ad alta e bassa velocità.</p>
+        <ul>
+            <li>Eau Rouge - Raidillon: La combinazione di curve più famosa del mondo, una salita vertiginosa che i piloti affrontano in pieno, richiedendo massima precisione e coraggio.</li>
+            <li>Staccata della Source (Curva 1): Un punto chiave per i sorpassi dopo il rettilineo principale.</li>
+            <li>Pouhon: Una lunga e velocissima curva a sinistra in discesa, che mette alla prova l'aerodinamica della vettura e la resistenza fisica dei piloti.</li>
+            <li>Blanchimont: Un'altra curva ad altissima velocità che porta al rettilineo del Kemmel.</li>
+            <li>Meteo Imprevedibile: Le Ardenne sono note per la loro pioggia improvvisa, che spesso crea condizioni miste sul tracciato.</li>
+        </ul>
+
+        <h3>Statistiche Chiave del Circuito</h3>
+        <div class="circuit-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Località</td>
+                        <td data-label="Dettaglio">Francorchamps, Belgio</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Lunghezza Circuito</td>
+                        <td data-label="Dettaglio">7.004 km (4.352 miglia)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Numero di Giri (F1)</td>
+                        <td data-label="Dettaglio">44</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Record sul Giro (gara)</td>
+                        <td data-label="Dettaglio">1:46.286 (Valtteri Bottas, Mercedes, 2018)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Curve</td>
+                        <td data-label="Dettaglio">19</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Prima Edizione GP F1</td>
+                        <td data-label="Dettaglio">1950 (nella versione attuale dal 1979)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Caratteristica Famosa</td>
+                        <td data-label="Dettaglio">Eau Rouge - Raidillon</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Momenti Memorabili e Le Emozioni di Spa</h3>
+        <p>Spa-Francorchamps è stato teatro di innumerevoli momenti epici nella storia della Formula 1. Dalle lotte titaniche tra campioni come Ayrton Senna e Alain Prost, alle prodezze sul bagnato di Michael Schumacher, fino alle gare più recenti ricche di sorpassi e colpi di scena, questo circuito non delude mai. La sua unicità e la sua natura di "circuito da piloti" lo rendono un appuntamento fisso e attesissimo nel calendario del motorsport.</p>
+        
+        
+
+        <h3>Risorse Aggiuntive:</h3>
+        <p>
+            <a href="https://it.wikipedia.org/wiki/Circuito_di_Spa-Francorchamps" target="_blank">Circuito di Spa-Francorchamps su Wikipedia</a> | 
+            <a href="https://www.spa-francorchamps.be/en" target="_blank">Sito Ufficiale Circuit de Spa-Francorchamps</a>
+        </p>
+        
+        <a href="circuiti.html" class="back-link">← Torna all'elenco dei Circuiti</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

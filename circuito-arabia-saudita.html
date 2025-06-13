@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Arabia Saudita - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0D0D0D; /* Nero profondo */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #00FF00; /* Verde brillante, colore della bandiera dell'Arabia Saudita */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #1A1A1A; /* Nero su verde */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #000000; /* Nero */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #333333;
+        }
+        nav a {
+            color: #BBBBBB; /* Grigio chiaro */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #1A1A1A; /* Grigio scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #00FF00; /* Bordo verde brillante */
+        }
+        .article-content h1 {
+            color: #00FF00; /* Verde brillante */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #FFFFFF; /* Bianco */
+        }
+        .article-content h3 {
+            color: #FFFFFF; /* Bianco */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #FFFFFF;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #00FF00; /* Verde brillante */
+            text-decoration: none;
+            border-bottom: 1px dashed #00FF00;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #33FF33;
+            border-color: #33FF33;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #FFFFFF; /* Bianco */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna ai circuiti" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00FF00, #33FF33); /* Sfumatura Verde */
+            color: #1A1A1A; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #33FF33, #66FF66);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #000000; /* Nero */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #333333;
+        }
+
+        /* Stili per le Tabelle */
+        .circuit-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #0A0A0A; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .circuit-stats th, .circuit-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #222222; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .circuit-stats th {
+            background-color: #00FF00; /* Verde brillante per l'intestazione */
+            color: #1A1A1A;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .circuit-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .circuit-stats tr:nth-child(even) {
+            background-color: #050505; /* Riga pari più scura */
+        }
+        .circuit-stats tr:hover {
+            background-color: #222222; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .circuit-stats td, .circuit-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .circuit-stats table, .circuit-stats tbody, .circuit-stats thead, .circuit-stats tr, .circuit-stats th, .circuit-stats td {
+                display: block;
+                width: 100%;
+            }
+            .circuit-stats thead {
+                display: none;
+            }
+            .circuit-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #222222;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .circuit-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .circuit-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #FFFFFF; /* Bianco per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Gran Premio dell'Arabia Saudita: La Sfida Urbana più Veloce del Mondo</h1>
+        <p>Il Jeddah Corniche Circuit, sede del Gran Premio dell'Arabia Saudita, è entrato nel calendario di Formula 1 nel 2021, portando una nuova e unica sfida al campionato. È un circuito stradale incredibilmente veloce, progettato appositamente per la F1, che si snoda lungo la costa del Mar Rosso a Jeddah. È diventato rapidamente famoso per essere il circuito stradale più veloce del mondo e per le sue numerose curve cieche ad alta velocità.</p>
+        
+        <p>Il tracciato è caratterizzato da 27 curve, il numero più alto di qualsiasi altro circuito di F1, molte delle quali sono sequenze veloci e fluide che richiedono un'enorme precisione e coraggio da parte dei piloti. La vicinanza dei muri rende ogni errore costoso, aumentando il dramma e l'intensità della gara. Jeddah offre anche diverse zone DRS, favorendo i sorpassi sui lunghi rettilinei che lo rendono una tappa entusiasmante e imprevedibile del calendario.</p>
+
+        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Saudi_Arabia_Circuit" alt="[Immagine del Circuito di Jeddah Corniche]">
+        
+        <h3>Caratteristiche e Sfide Tecniche</h3>
+        <p>Il Jeddah Corniche Circuit è un banco di prova estremo per vetture e piloti, combinando velocità pura con la necessità di precisione chirurgica.</p>
+        <ul>
+            <li>Velocità Media Elevatissima: Progettato per essere il circuito stradale più veloce, con velocità medie tra le più alte del calendario.</li>
+            <li>Curve Cieche ad Alta Velocità: Numerose curve a muro che si affrontano ad alta velocità, richiedendo massima fiducia e precisione.</li>
+            <li>27 Curve: Il maggior numero di curve in F1, che rende il giro molto intenso e ritmico.</li>
+            <li>Zone DRS: Diverse zone DRS lunghe che offrono opportunità di sorpasso, nonostante la natura stretta del circuito.</li>
+            <li>Setup Aerodinamico: Richiede un setup con medio-alto carico aerodinamico per massimizzare l'aderenza nelle curve veloci, ma anche una buona efficienza per i rettilinei.</li>
+        </ul>
+
+        <h3>Statistiche Chiave del Circuito</h3>
+        <div class="circuit-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Località</td>
+                        <td data-label="Dettaglio">Jeddah, Arabia Saudita</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Lunghezza Circuito</td>
+                        <td data-label="Dettaglio">6.174 km (3.836 miglia)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Numero di Giri (F1)</td>
+                        <td data-label="Dettaglio">50</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Record sul Giro (gara)</td>
+                        <td data-label="Dettaglio">1:30.734 (Lewis Hamilton, Mercedes, 2021)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Curve</td>
+                        <td data-label="Dettaglio">27</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Prima Edizione GP F1</td>
+                        <td data-label="Dettaglio">2021</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Caratteristica Unica</td>
+                        <td data-label="Dettaglio">Circuito stradale più veloce del mondo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Momenti Memorabili e L'Impatto sul Campionato</h3>
+        <p>Il Gran Premio dell'Arabia Saudita ha già regalato gare piene di azione, incidenti e Safety Car, diventando noto per la sua imprevedibilità. La combinazione di alta velocità e curve cieche lo rende una delle piste più adrenaliniche e potenzialmente pericolose del calendario, mettendo alla prova la concentrazione e la reattività dei piloti al limite. È un circuito che premia le vetture con un'ottima stabilità e un'aerodinamica efficiente, ma anche i piloti con il coraggio di attaccare i limiti.</p>
+        
+        
+
+        <h3>Risorse Aggiuntive:</h3>
+        <p>
+            <a href="https://it.wikipedia.org/wiki/Circuito_Cittadino_di_Jeddah" target="_blank">Circuito di Jeddah su Wikipedia</a> | 
+            <a href="https://www.saudiarabiangp.com/" target="_blank">Sito Ufficiale Saudi Arabian Grand Prix</a>
+        </p>
+        
+        <a href="circuiti.html" class="back-link">← Torna all'elenco dei Circuiti</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

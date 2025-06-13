@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cina - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #4D0000; /* Rosso scuro, per il tema cinese */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #DE0000; /* Rosso vivo, colore dominante in Cina */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #F0F0F0; /* Grigio molto chiaro */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #2A0000; /* Rosso ancora più scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #5A0000;
+        }
+        nav a {
+            color: #F0F0F0; /* Grigio molto chiaro */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #1A0000; /* Rosso scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #DE0000; /* Bordo rosso vivo */
+        }
+        .article-content h1 {
+            color: #DE0000; /* Rosso vivo */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #F0F0F0; /* Grigio molto chiaro */
+        }
+        .article-content h3 {
+            color: #F0F0F0; /* Grigio molto chiaro */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #F0F0F0;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #DE0000; /* Rosso vivo */
+            text-decoration: none;
+            border-bottom: 1px dashed #DE0000;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #FF4D4D;
+            border-color: #FF4D4D;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #F0F0F0; /* Grigio molto chiaro */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna ai circuiti" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #DE0000, #FF4D4D); /* Sfumatura Rosso */
+            color: #F0F0F0; /* Testo chiaro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FF4D4D, #FF7070);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #2A0000; /* Rosso ancora più scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #5A0000;
+        }
+
+        /* Stili per le Tabelle */
+        .circuit-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #3A0000; /* Sfondo tabella rosso scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .circuit-stats th, .circuit-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #4A0000; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .circuit-stats th {
+            background-color: #DE0000; /* Rosso vivo per l'intestazione */
+            color: #F0F0F0;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .circuit-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .circuit-stats tr:nth-child(even) {
+            background-color: #300000; /* Riga pari più scura */
+        }
+        .circuit-stats tr:hover {
+            background-color: #4A0000; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .circuit-stats td, .circuit-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .circuit-stats table, .circuit-stats tbody, .circuit-stats thead, .circuit-stats tr, .circuit-stats th, .circuit-stats td {
+                display: block;
+                width: 100%;
+            }
+            .circuit-stats thead {
+                display: none;
+            }
+            .circuit-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #4A0000;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .circuit-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .circuit-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #F0F0F0; /* Grigio molto chiaro per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Gran Premio della Cina: Il Dragone Tecnologico di Shanghai</h1>
+        <p>Il Circuito Internazionale di Shanghai, sede del Gran Premio della Cina, è un tracciato moderno e iconico, noto per il suo design unico a forma del carattere cinese "上" (shàng), che significa "in alto" o "sopra". Costruito per essere all'avanguardia tecnologica, ha ospitato il suo primo Gran Premio di Formula 1 nel 2004 e da allora è diventato un appuntamento fisso nel calendario, apprezzato per le sue sfide tecniche e le opportunità di sorpasso.</p>
+        
+        <p>Il circuito si distingue per il suo lunghissimo rettilineo posteriore, uno dei più lunghi di tutta la Formula 1, che offre eccellenti opportunità per l'uso del DRS e per sorpassi in scia. È anche famoso per la sua "Curva Caracollo" (T1-T4), una combinazione di curve a raggio decrescente che mette a dura prova l'aerodinamica e la gestione degli pneumatici. Shanghai richiede un setup che bilanci velocità massima e aderenza in curva, rendendolo un vero test per le monoposto.</p>
+
+        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_1440,q_auto/f_auto/q_auto/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/China_Circuit" alt="[Image of Shanghai International Circuit]">
+        
+        <h3>Caratteristiche e Sfide Tecniche</h3>
+        <p>Shanghai presenta una combinazione unica di settori che richiedono diverse configurazioni e abilità di guida.</p>
+        <ul>
+            <li>Curva Caracollo (T1-T4): Una curva a spirale lunga e impegnativa che restringe progressivamente, richiedendo precisione e sensibilità.</li>
+            <li>Lungo Rettilineo Posteriore:** Uno dei rettilinei più lunghi della F1, cruciale per i sorpassi con l'uso del DRS.</li>
+            <li>Curva 13 (a gomito): Una curva lenta e difficile, importante per la trazione in uscita sul rettilineo principale.</li>
+            <li>Gestione Pneumatici: L'alternanza tra curve ad alta e bassa velocità e il lungo rettilineo mettono a dura prova l'usura e il riscaldamento degli pneumatici.</li>
+        </ul>
+
+        <h3>Statistiche Chiave del Circuito</h3>
+        <div class="circuit-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Località</td>
+                        <td data-label="Dettaglio">Shanghai, Cina</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Lunghezza Circuito</td>
+                        <td data-label="Dettaglio">5.451 km (3.387 miglia)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Numero di Giri (F1)</td>
+                        <td data-label="Dettaglio">56</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Record sul Giro (gara)</td>
+                        <td data-label="Dettaglio">1:32.238 (Michael Schumacher, Ferrari, 2004)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Curve</td>
+                        <td data-label="Dettaglio">16</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Prima Edizione GP F1</td>
+                        <td data-label="Dettaglio">2004</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Caratteristica Unica</td>
+                        <td data-label="Dettaglio">Design ispirato al carattere cinese "上"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Momenti Memorabili e Importanza Strategica</h3>
+        <p>Il Gran Premio della Cina ha visto molti momenti storici e gare emozionanti, spesso decise dalla gestione delle gomme o dalle strategie di pit stop. La sua combinazione di velocità e tecnica lo rende un banco di prova per le power unit e l'aerodinamica. La presenza di un lungo rettilineo favorisce i sorpassi, mentre le curve lente e complesse richiedono un'ottima aderenza meccanica, rendendo la scelta del setup cruciale per il successo.</p>
+        
+        
+
+        <h3>Risorse Aggiuntive:</h3>
+        <p>
+            <a href="https://it.wikipedia.org/wiki/Circuito_di_Shanghai" target="_blank">Circuito di Shanghai su Wikipedia</a> | 
+            <a href="https://www.formula1.com/en/racing/2025/China.html" target="_blank">Gran Premio della Cina su F1.com</a>
+        </p>
+        
+        <a href="circuiti.html" class="back-link">← Torna all'elenco dei Circuiti</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

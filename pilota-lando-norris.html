@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lando Norris - McLaren F1 Team - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #000B1A; /* Blu scuro per tema McLaren */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #FF5E00; /* Arancione Papaya McLaren più intenso */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #1A1A2A; /* Testo scuro su arancione */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #000710; /* Blu molto scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #33334A;
+        }
+        nav a {
+            color: #90EE90; /* Verde brillante */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #0D1A2A; /* Sfondo scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #FF5E00; /* Bordo arancione Papaya */
+        }
+        .article-content h1 {
+            color: #FF5E00; /* Arancione Papaya */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #90EE90; /* Verde brillante */
+        }
+        .article-content h3 {
+            color: #90EE90; /* Verde brillante */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #90EE90;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #FF5E00; /* Arancione Papaya */
+            text-decoration: none;
+            border-bottom: 1px dashed #FF5E00;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #ff7b33;
+            border-color: #ff7b33;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #90EE90; /* Verde brillante */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FF5E00, #FF7B33); /* Sfumatura Arancione Papaya */
+            color: #000B1A; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FF7B33, #FF9966);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #000710; /* Blu molto scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #33334A;
+        }
+
+        /* Stili per le Tabelle */
+        .driver-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #2A2A3A; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .driver-stats th, .driver-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #3A3A4A; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .driver-stats th {
+            background-color: #90EE90; /* Verde brillante per l'intestazione */
+            color: #000B1A; /* Testo scuro */
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .driver-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .driver-stats tr:nth-child(even) {
+            background-color: #202030; /* Riga pari più scura */
+        }
+        .driver-stats tr:hover {
+            background-color: #3A3A4A; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .driver-stats td, .driver-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .driver-stats table, .driver-stats tbody, .driver-stats thead, .driver-stats tr, .driver-stats th, .driver-stats td {
+                display: block;
+                width: 100%;
+            }
+            .driver-stats thead {
+                display: none;
+            }
+            .driver-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #3A3A4A;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .driver-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .driver-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #FFD60A; /* Giallo anche per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Lando Norris: Il Genio Britannico del Sorriso</h1>
+        <p>Lando Norris, nato il 13 novembre 1999 a Bristol, Regno Unito, è uno dei piloti più carismatici e talentuosi dell'attuale generazione in Formula 1. La sua carriera è iniziata precocemente nel karting, dove ha mostrato un'abilità innata e una velocità eccezionale, culminando in numerosi titoli prima di passare alle monoposto.</p>
+        
+        <p>Dopo aver brillato nelle categorie junior (vincendo il Campionato Europeo FIA Formula 3 e arrivando secondo in Formula 2), Lando ha fatto il suo debutto in Formula 1 con la McLaren nel 2019. Da allora, si è affermato come un punto di riferimento per il team, mostrando una crescita costante e una capacità di guida impressionante, spesso estraendo il massimo dalla vettura anche in condizioni difficili, culminando nella sua prima storica vittoria a Miami.</p>
+
+        <img src="https://mclaren.bloomreach.io/cdn-cgi/image/width=1024,quality=80,format=webp/delivery/resources/content/gallery/mclaren-racing/formula-1/2025/nsr/f1-75-live-m/web/2025_lando_team_pic_02.jpg" alt="[Immagine di Lando Norris alla guida della McLaren]">
+        
+        <h3>Stile di Guida e Caratteristiche Distintive</h3>
+        <p>Norris è ammirato per la sua velocità pura in qualifica e la sua eccezionale capacità di controllo della vettura, specialmente nelle curve ad alta velocità. Ha un tocco molto sensibile e riesce a comunicare in modo estremamente efficace con i suoi ingegneri, contribuendo allo sviluppo della vettura. La sua personalità vivace, il suo umorismo e la sua presenza sui social media lo hanno reso un beniamino del pubblico e un'icona per le nuove generazioni.</p>
+        <ul>
+            <li>Velocità in Qualifica: Spesso tra i più veloci sul giro secco, con numerose pole position sfiorate.</li>
+            <li>Controllo della Vettura: Grande sensibilità e capacità di gestire l'auto al limite, soprattutto in frenata e in ingresso curva.</li>
+            <li>Consistenza in Gara: Dimostra spesso un ritmo solido e una buona gestione degli pneumatici, raramente commettendo errori grossolani.</li>
+            <li>Adattabilità: Capace di adattarsi a diverse condizioni e strategie di gara, mostrando versatilità.</li>
+        </ul>
+
+        <h3>Statistiche Chiave e Traguardi in F1</h3>
+        <div class="driver-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoria / Evento</th>
+                        <th>Risultato / Anno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoria / Evento">Debutto in F1</td>
+                        <td data-label="Risultato / Anno">Gran Premio d'Australia 2019</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Primo Podio F1</td>
+                        <td data-label="Risultato / Anno">Gran Premio d'Austria 2020</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Prima Vittoria in GP</td>
+                        <td data-label="Risultato / Anno">Gran Premio di Miami 2024</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Numero di Podi (ad oggi)</td>
+                        <td data-label="Risultato / Anno">15+</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Numero di Pole Position (ad oggi)</td>
+                        <td data-label="Risultato / Anno">1+</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Vincitore Campionato FIA F3</td>
+                        <td data-label="Risultato / Anno">2017</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Vice-Campione FIA F2</td>
+                        <td data-label="Risultato / Anno">2018</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Il Ruolo in McLaren e le Aspirazioni Future</h3>
+        <p>Lando Norris è un pilastro del progetto McLaren, avendo firmato contratti a lungo termine che sottolineano la fiducia del team nel suo potenziale di campione. Con l'obiettivo di riportare la McLaren ai vertici della Formula 1, Lando è determinato a lottare per il campionato del mondo. La sua partnership con Oscar Piastri forma una delle coppie più giovani, competitive e promettenti della griglia, spingendosi reciprocamente a migliorare e a portare successi alla storica scuderia di Woking.</p>
+        
+
+        <h3>Segui Lando Norris sui Social:</h3>
+        <p>
+            <a href="https://www.instagram.com/landonorris/" target="_blank">Instagram di Lando Norris</a> | 
+            <a href="https://twitter.com/LandoNorris" target="_blank">Twitter di Lando Norris</a> | 
+            <a href="https://www.formula1.com/en/drivers/lando-norris.html" target="_blank">Profilo F1 Ufficiale</a>
+        </p>
+        
+        <a href="piloti.html" class="back-link">← Torna agli articoli</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Isack Hadjar - Red Bull Junior - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #1C0A0A; /* Rosso scuro per tema Red Bull Junior */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #4D0000; /* Rosso ancora più scuro */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #FFC0CB; /* Rosa chiaro */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #0D0000; /* Rosso quasi nero */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #660000;
+        }
+        nav a {
+            color: #FFD60A; /* Giallo Red Bull */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #2A0A0A; /* Rosso scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #4D0000;
+        }
+        .article-content h1 {
+            color: #FFC0CB; /* Rosa chiaro */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #FFD60A; /* Giallo Red Bull */
+        }
+        .article-content h3 {
+            color: #FFD60A; /* Giallo Red Bull */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #FFD60A;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #FFC0CB; /* Rosa chiaro */
+            text-decoration: none;
+            border-bottom: 1px dashed #FFC0CB;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #FFECF2;
+            border-color: #FFECF2;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #FFD60A; /* Giallo Red Bull */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FFC0CB, #FF99AA); /* Sfumatura Rosa */
+            color: #1C0A0A; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FF99AA, #FF8099);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #0D0000; /* Rosso quasi nero */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #660000;
+        }
+
+        /* Stili per le Tabelle */
+        .driver-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #3A0A0A; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .driver-stats th, .driver-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #4A0A0A; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .driver-stats th {
+            background-color: #4D0000; /* Rosso più scuro per l'intestazione */
+            color: #FFC0CB;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .driver-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .driver-stats tr:nth-child(even) {
+            background-color: #300000; /* Riga pari più scura */
+        }
+        .driver-stats tr:hover {
+            background-color: #4A0A0A; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .driver-stats td, .driver-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .driver-stats table, .driver-stats tbody, .driver-stats thead, .driver-stats tr, .driver-stats th, .driver-stats td {
+                display: block;
+                width: 100%;
+            }
+            .driver-stats thead {
+                display: none;
+            }
+            .driver-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #4A0A0A;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .driver-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .driver-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #FFD60A; /* Giallo Red Bull per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Isack Hadjar: Il Giovane Talento Francese della Red Bull</h1>
+        <p>Isack Hadjar, nato il 28 settembre 2004 a Parigi, Francia, è uno dei gioielli più brillanti dell'Accademia Giovani Piloti della Red Bull, con un futuro molto promettente in Formula 1. Ha dimostrato il suo potenziale fin dalle categorie junior, scalando rapidamente i ranghi con una combinazione di velocità pura e una grande intelligenza in gara.</p>
+        
+        <p>Dopo aver impressionato in Formula Regional e in Formula 3, Hadjar è passato alla Formula 2, dove ha continuato a mettere in mostra il suo talento. La sua determinazione e la capacità di estrarre il massimo dalla vettura, anche in condizioni difficili, lo rendono un candidato serio per un sedile in Formula 1 nei prossimi anni, probabilmente con un team collegato alla Red Bull.</p>
+
+        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/2025Drivers/hadjar" alt="[Immagine di Isack Hadjar in azione]">
+        
+        <h3>Stile di Guida e Aspettative</h3>
+        <p>Hadjar è noto per il suo stile di guida aggressivo ma controllato, tipico dei piloti cresciuti nel programma Red Bull. Ha una grande sensibilità per la vettura e una notevole abilità nei duelli ruota a ruota. La sua rapida progressione e la sua capacità di adattarsi a nuove sfide lo rendono un osservato speciale per il futuro della Formula 1.</p>
+        <ul>
+            <li>Aggressività Controllata: Capacità di spingere al limite senza commettere errori.</li>
+            <li>Capacità di Adattamento: Rapido nell'apprendere e adattarsi a nuove categorie e piste.</li>
+            <li>Buon Ritmo in Gara: Dimostra consistenza e gestione intelligente delle gomme.</li>
+            <li>Determinazione: Forte mentalità competitiva.</li>
+        </ul>
+
+        <h3>Statistiche Chiave e Traguardi</h3>
+        <div class="driver-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Risultato / Anno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Nato</td>
+                        <td data-label="Risultato / Anno">28 Settembre 2004 (Parigi, Francia)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Campione Formula Regional Asian Championship</td>
+                        <td data-label="Risultato / Anno">2022</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vittorie FIA Formula 3</td>
+                        <td data-label="Risultato / Anno">2</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vittorie FIA Formula 2</td>
+                        <td data-label="Risultato / Anno">1+ (al debutto in F2)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Affiliazione</td>
+                        <td data-label="Risultato / Anno">Red Bull Junior Team</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Il Percorso verso la Formula 1</h3>
+        <p>Con il supporto della Red Bull, Hadjar è ben posizionato per raggiungere il suo sogno in Formula 1. La sua progressione in Formula 2 è un passo fondamentale, e le sue performance lo stanno mettendo in evidenza come uno dei prossimi talenti pronti a fare il salto. La sua presenza è vista come un'iniezione di nuova energia e competitività nella griglia del futuro.</p>
+        
+
+        <h3>Segui Isack Hadjar sui Social:</h3>
+        <p>
+            <a href="https://www.instagram.com/isack_hadjar/" target="_blank">Instagram di Isack Hadjar</a> | 
+            <a href="https://twitter.com/IsackHadjar" target="_blank">Twitter di Isack Hadjar</a> | 
+            <a href="https://www.redbull.com/int-en/juniorteam/drivers/isack-hadjar" target="_blank">Profilo Red Bull Junior Team</a>
+        </p>
+        
+        <a href="piloti.html" class="back-link">← Torna agli articoli</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

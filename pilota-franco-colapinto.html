@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Franco Colapinto - Williams Racing (Futuro) - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #05051A; /* Blu scuro per tema Williams/Argentina */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #00509E; /* Blu Williams */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #FFFFFF; /* Bianco */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #003366; /* Blu Williams scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #0066CC;
+        }
+        nav a {
+            color: #E6E6E6; /* Grigio molto chiaro */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #0A0A2A; /* Blu scuro-viola per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #00509E; /* Blu Williams */
+        }
+        .article-content h1 {
+            color: #00509E; /* Blu Williams */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #E6E6E6; /* Grigio molto chiaro */
+        }
+        .article-content h3 {
+            color: #E6E6E6; /* Grigio molto chiaro */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #E6E6E6;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #00509E; /* Blu Williams */
+            text-decoration: none;
+            border-bottom: 1px dashed #00509E;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #0077EE;
+            border-color: #0077EE;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #E6E6E6; /* Grigio molto chiaro */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00509E, #0066CC); /* Sfumatura Blu Williams */
+            color: #FFFFFF; /* Testo bianco per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #0066CC, #0077EE);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #003366; /* Blu Williams scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #0066CC;
+        }
+
+        /* Stili per le Tabelle */
+        .driver-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #0F0F30; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .driver-stats th, .driver-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #1F1F40; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .driver-stats th {
+            background-color: #00509E; /* Blu Williams per l'intestazione */
+            color: #FFFFFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .driver-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .driver-stats tr:nth-child(even) {
+            background-color: #0A0A20; /* Riga pari più scura */
+        }
+        .driver-stats tr:hover {
+            background-color: #1F1F40; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .driver-stats td, .driver-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .driver-stats table, .driver-stats tbody, .driver-stats thead, .driver-stats tr, .driver-stats th, .driver-stats td {
+                display: block;
+                width: 100%;
+            }
+            .driver-stats thead {
+                display: none;
+            }
+            .driver-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #1F1F40;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .driver-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .driver-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #E6E6E6; /* Grigio molto chiaro per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Franco Colapinto: La Promessa Argentina per la Williams</h1>
+        <p>Franco Colapinto, nato il 27 maggio 2003 a Pilar, Argentina, è uno dei talenti emergenti nel mondo del motorsport, con l'obiettivo di riportare un pilota argentino in Formula 1. Membro della Williams Driver Academy, ha mostrato un'impressionante progressione nelle categorie giovanili, evidenziando velocità e intelligenza di gara.</p>
+        
+        <p>Dopo aver brillato in Formula Renault Eurocup e in Formula 3, dove ha ottenuto vittorie e podi, Colapinto ha fatto il suo debutto in Formula 2. Le sue prestazioni hanno costantemente attirato l'attenzione del team Williams, culminate in sessioni di prove libere in Formula 1 e un potenziale futuro sedile nella categoria regina. La sua ascesa è seguita con grande entusiasmo dai tifosi argentini.</p>
+
+        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/fom-website/drivers/2025Drivers/colapinto" alt="[Immagine di Franco Colapinto in azione con la livrea Williams]">
+        
+        <h3>Stile di Guida e Aspettative</h3>
+        <p>Colapinto è noto per la sua guida pulita ed efficace, unita a una notevole aggressività nei duelli quando l'opportunità si presenta. Ha una grande sensibilità per la vettura e una capacità di adattarsi rapidamente a nuove condizioni di pista e sfide. La sua determinazione e il suo approccio professionale lo rendono un candidato serio per il futuro della Formula 1, con l'obiettivo di consolidare il suo percorso con la Williams.</p>
+        <ul>
+            <li>Consistenza: Capace di mantenere un buon ritmo in gara e di evitare errori.</li>
+            <li>Intelligenza di Gara: Bravo a leggere le situazioni e a capitalizzare le opportunità, gestendo bene la strategia.</li>
+            <li>Adattabilità: Si adatta rapidamente a nuove piste e vetture, dimostrando versatilità.</li>
+            <li>Forte in Qualifica: Spesso in grado di estrarre il massimo dalla vettura sul giro secco.</li>
+        </ul>
+
+        <h3>Statistiche Chiave e Traguardi</h3>
+        <div class="driver-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Risultato / Anno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Nato</td>
+                        <td data-label="Risultato / Anno">27 Maggio 2003 (Pilar, Argentina)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vittorie FIA Formula 3</td>
+                        <td data-label="Risultato / Anno">3</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Podi FIA Formula 3</td>
+                        <td data-label="Risultato / Anno">5</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Debutto in F2</td>
+                        <td data-label="Risultato / Anno">2023 (prove libere in Abu Dhabi)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Debutto in F1 (Prove Libere)</td>
+                        <td data-label="Risultato / Anno">Gran Premio di Abu Dhabi 2023 (con Williams)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Affiliazione</td>
+                        <td data-label="Risultato / Anno">Williams Driver Academy</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Il Sogno della Formula 1 con la Williams</h3>
+        <p>Franco Colapinto è un elemento fondamentale per il futuro della Williams e per le ambizioni dell'Argentina in Formula 1. Il suo ruolo nella Williams Driver Academy e le sue partecipazioni alle sessioni di prove libere indicano una chiara traiettoria verso un sedile da titolare. Con l'obiettivo di riportare l'Argentina in griglia a tempo pieno, Colapinto continua a lavorare sodo per realizzare il suo sogno e consolidare la sua posizione come una delle stelle emergenti del motorsport mondiale, dimostrando il suo valore ad ogni opportunità.</p>
+        
+    
+
+        <h3>Segui Franco Colapinto sui Social:</h3>
+        <p>
+            <a href="https://www.instagram.com/francolapinto/" target="_blank">Instagram di Franco Colapinto</a> | 
+            <a href="https://twitter.com/FranColapinto" target="_blank">Twitter di Franco Colapinto</a> | 
+            <a href="https://www.williamsf1.com/teams/driver-academy/franco-colapinto" target="_blank">Profilo Williams Driver Academy</a>
+        </p>
+        
+        <a href="piloti.html" class="back-link">← Torna agli articoli</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

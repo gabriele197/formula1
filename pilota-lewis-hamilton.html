@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lewis Hamilton - Mercedes-AMG F1 / Futuro Ferrari - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #000000; /* Nero profondo per un tema lussuoso */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #00D1FF; /* Blu elettrico/azzurro brillante */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #000000; /* Nero su blu */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #000000; /* Nero ancora più profondo */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #333333;
+        }
+        nav a {
+            color: #B2FF00; /* Verde brillante */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #1A1A1A; /* Grigio scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #00D1FF; /* Blu elettrico */
+        }
+        .article-content h1 {
+            color: #00D1FF; /* Blu elettrico */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #B2FF00; /* Verde brillante */
+        }
+        .article-content h3 {
+            color: #B2FF00; /* Verde brillante */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #B2FF00;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #00D1FF; /* Blu elettrico */
+            text-decoration: none;
+            border-bottom: 1px dashed #00D1FF;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #4DFFFF;
+            border-color: #4DFFFF;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #B2FF00; /* Verde brillante */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00D1FF, #4DFFFF); /* Sfumatura Blu elettrico */
+            color: #000000; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #4DFFFF, #80FFFF);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #000000; /* Nero ancora più profondo */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #333333;
+        }
+
+        /* Stili per le Tabelle */
+        .driver-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #2A2A2A; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .driver-stats th, .driver-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #3A3A3A; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .driver-stats th {
+            background-color: #00D1FF; /* Blu elettrico per l'intestazione */
+            color: #000000;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .driver-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .driver-stats tr:nth-child(even) {
+            background-color: #202020; /* Riga pari più scura */
+        }
+        .driver-stats tr:hover {
+            background-color: #3A3A3A; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .driver-stats td, .driver-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .driver-stats table, .driver-stats tbody, .driver-stats thead, .driver-stats tr, .driver-stats th, .driver-stats td {
+                display: block;
+                width: 100%;
+            }
+            .driver-stats thead {
+                display: none;
+            }
+            .driver-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #3A3A3A;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .driver-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .driver-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #B2FF00; /* Verde brillante per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Lewis Hamilton: La Leggenda Vivente della Formula 1</h1>
+        <p>Sir Lewis Carl Davidson Hamilton, nato il 7 gennaio 1985 a Stevenage, Regno Unito, è senza dubbio uno dei piloti più grandi e influenti nella storia della Formula 1. Con un numero record di Campionati del Mondo vinti (7, a pari merito con Michael Schumacher) e una miriade di altre statistiche impressionanti, Hamilton ha ridefinito il significato di eccellenza nel motorsport.</p>
+        
+        <p>La sua carriera in F1 è iniziata nel 2007 con la McLaren, dove ha subito impressionato, sfiorando il titolo al suo primo anno e vincendolo nel 2008. Il passaggio alla Mercedes nel 2013 ha segnato l'inizio di un'era di dominio senza precedenti, con sei titoli mondiali conquistati tra il 2014 e il 2020. Oltre alla sua abilità in pista, Hamilton è un'icona globale, un pioniere nella lotta per la diversità e l'inclusione nel motorsport e un attivista ambientale.</p>
+
+        <img src="https://cdn.ferrari.com/cms/network/media/img/resize/67add96cef0bda001197c257-2.lh-quote?width=1024&height=1024" alt="[Immagine di Lewis Hamilton in azione]">
+        
+        <h3>Stile di Guida e Approccio</h3>
+        <p>Hamilton è noto per la sua fluidità di guida, la sua eccezionale gestione degli pneumatici e la sua capacità di adattarsi a qualsiasi condizione di pista, dalla pioggia al caldo torrido. È un maestro del giro di qualifica e un avversario implacabile in gara, capace di manovre audaci e di gestire la pressione nei momenti cruciali. La sua intelligenza tattica e la sua velocità ineguagliabile lo rendono un pilota completo sotto ogni aspetto.</p>
+        <ul>
+            <li>Gestione Pneumatici: Tra i migliori nel preservare e sfruttare al massimo le gomme durante la gara.</li>
+            <li>Velocità Adattiva: Eccelle in tutte le condizioni, particolarmente brillante sul bagnato.</li>
+            <li>Precisione Estrema: Guida fluida e precisa, minimizzando gli errori anche sotto pressione.</li>
+            <li>Leadership e Carisma: Guida il team con l'esempio e ispira fiducia, dentro e fuori dalla pista.</li>
+        </ul>
+
+        <h3>Statistiche Chiave e Record in F1</h3>
+        <div class="driver-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Record / Numero</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Campionati del Mondo F1</td>
+                        <td data-label="Record / Numero">7 (record a pari merito)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vittorie in GP</td>
+                        <td data-label="Record / Numero">103+ (record)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Pole Position</td>
+                        <td data-label="Record / Numero">104+ (record)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Podi</td>
+                        <td data-label="Record / Numero">198+ (record)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Punti in Carriera</td>
+                        <td data-label="Record / Numero">4600+ (record)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Gran Premi consecutivi a punti</td>
+                        <td data-label="Record / Numero">48</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Pilota con più stagioni consecutive a vincere</td>
+                        <td data-label="Record / Numero">15+ (record)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Il Passaggio alla Ferrari: Un Nuovo Capitolo</h3>
+        <p>L'annuncio del suo passaggio alla Scuderia Ferrari a partire dal 2025 ha scosso il mondo della Formula 1, creando un'attesa senza precedenti. Dopo anni di successi in Mercedes, Hamilton intraprenderà una nuova ed entusiasmante sfida con il team più iconico della Formula 1. Questo trasferimento rappresenta un'opportunità storica per Hamilton di aggiungere un ottavo titolo al suo palmares e di consolidare ulteriormente la sua leggenda, unendo la sua eredità con quella del Cavallino Rampante.</p>
+        
+
+        <h3>Segui Lewis Hamilton sui Social:</h3>
+        <p>
+            <a href="https://www.instagram.com/lewishamilton/" target="_blank">Instagram di Lewis Hamilton</a> | 
+            <a href="https://twitter.com/LewisHamilton" target="_blank">Twitter di Lewis Hamilton</a> | 
+            <a href="https://www.formula1.com/en/drivers/lewis-hamilton.html" target="_blank">Profilo F1 Ufficiale</a>
+        </p>
+        
+        <a href="piloti.html" class="back-link">← Torna agli articoli</a>
+    </div>
+
+    <footer>
+        © 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

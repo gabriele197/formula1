@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Imola - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #400000; /* Rosso scuro, per il tema italiano/Ferrari */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #B30000; /* Rosso Ferrari classico */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #FFFFFF; /* Bianco */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #200000; /* Rosso ancora più scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #500000;
+        }
+        nav a {
+            color: #E0E0E0; /* Grigio chiaro */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #300000; /* Rosso-marrone scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #B30000; /* Bordo rosso Ferrari */
+        }
+        .article-content h1 {
+            color: #B30000; /* Rosso Ferrari */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #FFFFFF; /* Bianco */
+        }
+        .article-content h3 {
+            color: #FFFFFF; /* Bianco */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #FFFFFF;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #B30000; /* Rosso Ferrari */
+            text-decoration: none;
+            border-bottom: 1px dashed #B30000;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #FF3333;
+            border-color: #FF3333;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #FFFFFF; /* Bianco */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna ai circuiti" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #B30000, #FF3333); /* Sfumatura Rosso */
+            color: #FFFFFF; /* Testo bianco per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FF3333, #FF6666);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #200000; /* Rosso ancora più scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #500000;
+        }
+
+        /* Stili per le Tabelle */
+        .circuit-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #300000; /* Sfondo tabella rosso scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .circuit-stats th, .circuit-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #400000; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .circuit-stats th {
+            background-color: #B30000; /* Rosso Ferrari per l'intestazione */
+            color: #FFFFFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .circuit-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .circuit-stats tr:nth-child(even) {
+            background-color: #280000; /* Riga pari più scura */
+        }
+        .circuit-stats tr:hover {
+            background-color: #400000; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .circuit-stats td, .circuit-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .circuit-stats table, .circuit-stats tbody, .circuit-stats thead, .circuit-stats tr, .circuit-stats th, .circuit-stats td {
+                display: block;
+                width: 100%;
+            }
+            .circuit-stats thead {
+                display: none;
+            }
+            .circuit-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #400000;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .circuit-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .circuit-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #FFFFFF; /* Bianco per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Gran Premio dell'Emilia-Romagna: Il Fascino Storico di Imola</h1>
+        <p>L'Autodromo Internazionale Enzo e Dino Ferrari, comunemente noto come Imola, è un circuito con una ricca storia e un profondo legame con la Formula 1. Situato vicino alla città di Imola, in Italia, ha ospitato il Gran Premio di San Marino per molti anni prima di rientrare nel calendario come Gran Premio dell'Emilia-Romagna. È un tracciato amato dai piloti per la sua natura impegnativa, le sue curve veloci e tecniche, e la sua capacità di punire anche il minimo errore.</p>
+        
+        <p>Imola è un circuito "vecchia scuola" che scorre attraverso la campagna, offrendo saliscendi naturali e una combinazione di curve iconiche come la Rivazza, la Tosa e la Piratella. Richiede un setup aerodinamico bilanciato per affrontare le varie sezioni, dalle curve veloci che mettono alla prova l'aerodinamica, alle frenate potenti che richiedono un'ottima stabilità. La sua riapertura al calendario è stata accolta con entusiasmo, riportando un pezzo di storia della F1 in un'epoca moderna.</p>
+
+        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Emilia_Romagna_Circuit" alt="[Immagine del Circuito di Imola]">
+        
+        <h3>Caratteristiche e Sfide Tecniche</h3>
+        <p>Imola è un test completo per le monoposto e per le capacità di guida dei piloti, con sezioni che richiedono precisione e coraggio.</p>
+        <ul>
+            <li>Curve Veloci e Tecniche: Un mix di curve ad alta e media velocità che mettono alla prova l'aderenza laterale e la precisione del setup.</li>
+            <li>Saliscendi Naturali: Il tracciato segue le ondulazioni del terreno, rendendo la guida dinamica e sfidante.</li>
+            <li>Punti di Frenata Critici: Diverse chicane e curve strette richiedono frenate molto potenti e stabili.</li>
+            <li>Bassa Possibilità di Errore: La presenza di erba e ghiaia vicino alla pista significa che anche un piccolo errore può avere conseguenze importanti.</li>
+        </ul>
+
+        <h3>Statistiche Chiave del Circuito</h3>
+        <div class="circuit-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Località</td>
+                        <td data-label="Dettaglio">Imola, Italia</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Lunghezza Circuito</td>
+                        <td data-label="Dettaglio">4.909 km (3.050 miglia)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Numero di Giri (F1)</td>
+                        <td data-label="Dettaglio">63</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Record sul Giro (gara)</td>
+                        <td data-label="Dettaglio">1:15.484 (Lewis Hamilton, Mercedes, 2020)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Curve</td>
+                        <td data-label="Dettaglio">19</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Prima Edizione GP F1 (come San Marino)</td>
+                        <td data-label="Dettaglio">1981</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Ritorno in F1 (come Emilia-Romagna)</td>
+                        <td data-label="Dettaglio">2020</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Momenti Memorabili e L'Eredità</h3>
+        <p>Imola è intrisa di storia della Formula 1, avendo ospitato momenti di trionfo e tragedia. La sua natura impegnativa significa che le gare sono spesso intense e strategicamente complesse. La stretta pista rende i sorpassi difficili ma non impossibili, valorizzando il talento del pilota e la precisione del team. Imola rimane un circuito che evoca forti emozioni e un profondo rispetto per le sue sfide uniche.</p>
+        
+        
+
+        <h3>Risorse Aggiuntive:</h3>
+        <p>
+            <a href="https://it.wikipedia.org/wiki/Autodromo_internazionale_Enzo_e_Dino_Ferrari" target="_blank">Autodromo Imola su Wikipedia</a> | 
+            <a href="https://www.autodromoimola.it/" target="_blank">Sito Ufficiale Autodromo Internazionale Enzo e Dino Ferrari</a>
+        </p>
+        
+        <a href="circuiti.html" class="back-link">← Torna all'elenco dei Circuiti</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

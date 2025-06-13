@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gabriel Bortoleto - McLaren F1 Team (Futuro) - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0A0A0A; /* Nero profondo */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #FF8000; /* Arancione Papaya McLaren */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #1A1A2A; /* Testo scuro su arancione */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #0A0A15; /* Blu molto scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #33334A;
+        }
+        nav a {
+            color: #FFD60A; /* Giallo brillante */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #1A1A2A; /* Sfondo scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #FF8000; /* Bordo arancione Papaya */
+        }
+        .article-content h1 {
+            color: #FF8000; /* Arancione Papaya */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #FFD60A; /* Giallo brillante */
+        }
+        .article-content h3 {
+            color: #FFD60A; /* Giallo brillante */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #FFD60A;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #FF8000; /* Arancione Papaya */
+            text-decoration: none;
+            border-bottom: 1px dashed #FF8000;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #ff9933;
+            border-color: #ff9933;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #FFD60A; /* Giallo brillante */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FF8000, #FF9933); /* Sfumatura Arancione Papaya */
+            color: #0D0D1A; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FF9933, #FFB366);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #0A0A15; /* Blu molto scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #33334A;
+        }
+
+        /* Stili per le Tabelle */
+        .driver-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #2A2A3A; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .driver-stats th, .driver-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #3A3A4A; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .driver-stats th {
+            background-color: #FF8000; /* Arancione Papaya per l'intestazione */
+            color: #1A1A2A;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .driver-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .driver-stats tr:nth-child(even) {
+            background-color: #202030; /* Riga pari più scura */
+        }
+        .driver-stats tr:hover {
+            background-color: #3A3A4A; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .driver-stats td, .driver-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .driver-stats table, .driver-stats tbody, .driver-stats thead, .driver-stats tr, .driver-stats th, .driver-stats td {
+                display: block;
+                width: 100%;
+            }
+            .driver-stats thead {
+                display: none;
+            }
+            .driver-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #3A3A4A;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .driver-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .driver-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #FFD60A; /* Giallo anche per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Gabriel Bortoleto: Il Fenomeno Brasiliano verso la F1</h1>
+        <p>Gabriel Bortoleto, nato l'11 ottobre 2004 a São Paulo, Brasile, è uno dei giovani talenti più entusiasmanti nel panorama del motorsport. Protégé dell'Accademia McLaren, ha rapidamente dimostrato un potenziale straordinario e una maturità impressionante, scalando le categorie giovanili con determinazione e vincendo il Campionato FIA Formula 3 nel 2023 al suo primo tentativo.</p>
+        
+        <p>La sua vittoria in Formula 3 ha attirato l'attenzione di molti, consolidando la sua posizione come una delle future stelle della Formula 1. Con un debutto in Formula 2 nel 2024, Bortoleto mira a continuare la sua rapida ascesa, con l'obiettivo di guadagnarsi un sedile nel team McLaren o in un team affiliato nei prossimi anni. Il suo approccio metodico e la sua velocità pura lo rendono un candidato serio per il grande salto.</p>
+
+        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/2025Drivers/bortoleto" alt="[Immagine di Gabriel Bortoleto in azione]">
+        
+        <h3>Stile di Guida e Punti di Forza</h3>
+        <p>Bortoleto è noto per la sua guida fluida e controllata, ma allo stesso tempo molto aggressiva quando necessario. Ha una grande capacità di gestire la pressione e di capitalizzare le opportunità, come dimostrato dalla sua impressionante stagione in F3. La sua intelligenza tattica e la sua costante ricerca del miglioramento lo rendono un pilota completo, con un forte potenziale per il successo a lungo termine in F1.</p>
+        <ul>
+            <li>Consistenza: Capace di portare a casa risultati importanti senza commettere errori costosi.</li>
+            <li>Gestione della Pressione: Mantiene la calma anche nelle situazioni più critiche di gara.</li>
+            <li>Intelligenza Tattica: Bravo a leggere la gara e a prendere decisioni strategiche efficaci.</li>
+            <li>Velocità Adattiva: Si adatta rapidamente a nuove piste e condizioni, massimizzando il potenziale della vettura.</li>
+        </ul>
+
+        <h3>Statistiche Chiave e Traguardi</h3>
+        <div class="driver-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Risultato / Anno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Nato</td>
+                        <td data-label="Risultato / Anno">11 Ottobre 2004 (São Paulo, Brasile)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Campione FIA Formula 3</td>
+                        <td data-label="Risultato / Anno">2023</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vittorie FIA Formula 3</td>
+                        <td data-label="Risultato / Anno">2 (2023)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Podi FIA Formula 3</td>
+                        <td data-label="Risultato / Anno">6 (2023)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Debutto in F2</td>
+                        <td data-label="Risultato / Anno">2024</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Affiliazione</td>
+                        <td data-label="Risultato / Anno">McLaren Driver Development Programme</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Il Percorso verso la Formula 1 con McLaren</h3>
+        <p>Con il supporto della McLaren, Gabriel Bortoleto è in una posizione privilegiata per raggiungere il suo sogno in Formula 1. La sua stagione da rookie in Formula 2 è un passo fondamentale, e le sue prestazioni continueranno a essere sotto stretta osservazione. Il suo talento cristallino e la sua dedizione lo rendono una delle più grandi speranze brasiliane per il futuro della F1, con l'obiettivo di emulare i grandi campioni del suo paese e di affermarsi tra i migliori del mondo.</p>
+        
+
+        <h3>Segui Gabriel Bortoleto sui Social:</h3>
+        <p>
+            <a href="https://www.instagram.com/g.bortoleto/" target="_blank">Instagram di Gabriel Bortoleto</a> | 
+            <a href="https://twitter.com/GabBortoleto" target="_blank">Twitter di Gabriel Bortoleto</a> | 
+            <a href="https://www.mclaren.com/racing/team/mclaren-driver-development-programme/gabriel-bortoleto/" target="_blank">Profilo McLaren (Programma Sviluppo Piloti)</a>
+        </p>
+        
+        <a href="piloti.html" class="back-link">← Torna agli articoli</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Alexander Albon - Williams Racing - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #05051A; /* Blu scuro Williams */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #00509E; /* Blu Williams */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #FFFFFF; /* Bianco */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #003366; /* Blu Williams scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #0066CC;
+        }
+        nav a {
+            color: #E6E6E6; /* Grigio molto chiaro */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #0A0A2A; /* Blu scuro-viola per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #00509E; /* Blu Williams */
+        }
+        .article-content h1 {
+            color: #00509E; /* Blu Williams */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #E6E6E6; /* Grigio molto chiaro */
+        }
+        .article-content h3 {
+            color: #E6E6E6; /* Grigio molto chiaro */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #E6E6E6;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #00509E; /* Blu Williams */
+            text-decoration: none;
+            border-bottom: 1px dashed #00509E;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #0077EE;
+            border-color: #0077EE;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #E6E6E6; /* Grigio molto chiaro */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00509E, #0066CC); /* Sfumatura Blu Williams */
+            color: #FFFFFF; /* Testo bianco per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #0066CC, #0077EE);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #003366; /* Blu Williams scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #0066CC;
+        }
+
+        /* Stili per le Tabelle */
+        .driver-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #0F0F30; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .driver-stats th, .driver-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #1F1F40; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .driver-stats th {
+            background-color: #00509E; /* Blu Williams per l'intestazione */
+            color: #FFFFFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .driver-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .driver-stats tr:nth-child(even) {
+            background-color: #0A0A20; /* Riga pari più scura */
+        }
+        .driver-stats tr:hover {
+            background-color: #1F1F40; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .driver-stats td, .driver-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .driver-stats table, .driver-stats tbody, .driver-stats thead, .driver-stats tr, .driver-stats th, .driver-stats td {
+                display: block;
+                width: 100%;
+            }
+            .driver-stats thead {
+                display: none;
+            }
+            .driver-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #1F1F40;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .driver-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .driver-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #E6E6E6; /* Grigio molto chiaro per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Alexander Albon: Il Lottatore Tenace della Williams</h1>
+        <p>Alexander Albon, nato il 23 marzo 1996 a Londra, Regno Unito, ma di nazionalità thailandese, è un pilota che ha saputo dimostrare la sua resilienza e la sua pura velocità in Formula 1. Dopo un percorso giovanile solido, ha debuttato in F1 nel 2019 con la Toro Rosso, passando poi alla Red Bull Racing a metà della stessa stagione, dove ha gareggiato al fianco di Max Verstappen.</p>
+        
+        <p>Nonostante un periodo difficile in Red Bull, Albon ha dimostrato di avere la stoffa del pilota di F1. Dopo un anno di pausa come collaudatore, è tornato in griglia nel 2022 con la Williams, dove si è affermato come leader del team, mostrando prestazioni eccezionali e spesso portando la vettura al di là delle sue capacità nominali, conquistando punti preziosi e meritandosi un contratto a lungo termine con la storica scuderia di Grove.</p>
+
+        <img src="https://media.formula1.com/image/upload/f_auto/q_auto/v1741268868/content/dam/fom-website/drivers/2025Drivers/albon.png" alt="[Immagine di Alexander Albon alla guida della Williams]">
+        
+        <h3>Stile di Guida e Resilienza</h3>
+        <p>Albon è riconosciuto per il suo stile di guida aggressivo ma controllato, con una particolare abilità nella gestione delle gomme e nel difendersi in pista. È un maestro nel bilanciare velocità pura e intelligenza tattica, spesso protagonista di manovre di difesa impressionanti. La sua capacità di estrarre prestazioni da vetture meno competitive lo ha reso un beniamino dei tifosi e un asset prezioso per la Williams.</p>
+        <ul>
+            <li>Difesa Eccezionale: Noto per le sue abilità difensive che gli permettono di tenere dietro avversari più veloci per molti giri.</li>
+            <li>Consistenza in Gara: Capacità di mantenere un buon ritmo per tutta la durata del Gran Premio, gestendo l'usura degli pneumatici.</li>
+            <li>Sensibilità al Setup: Fornisce feedback precisi e utili agli ingegneri per migliorare l'assetto della vettura.</li>
+            <li>Resilienza Mentale: Capacità di superare le difficoltà, imparare dagli errori e tornare più forte, dimostrando una grande forza d'animo.</li>
+        </ul>
+
+        <h3>Statistiche Chiave e Traguardi in F1</h3>
+        <div class="driver-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Risultato / Anno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Debutto in F1</td>
+                        <td data-label="Risultato / Anno">Gran Premio d'Australia 2019</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Primo Podio F1</td>
+                        <td data-label="Risultato / Anno">Gran Premio della Toscana 2020</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vittorie in GP (ad oggi)</td>
+                        <td data-label="Risultato / Anno">0</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Podi in F1 (ad oggi)</td>
+                        <td data-label="Risultato / Anno">2</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Punti in Carriera (ad oggi)</td>
+                        <td data-label="Risultato / Anno">100+</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Team Attuale</td>
+                        <td data-label="Risultato / Anno">Williams Racing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Il Ruolo in Williams e il Futuro</h3>
+        <p>Alexander Albon è diventato il leader indiscusso della Williams, un pilastro attorno al quale il team sta cercando di ricostruire la sua competitività e di risalire la griglia. La sua esperienza, la sua leadership in pista e la sua determinazione sono fondamentali per lo sviluppo della vettura e per il morale della squadra. Con un contratto a lungo termine, Albon è destinato a essere il punto di riferimento per il futuro della Williams, con l'obiettivo di riportare la storica scuderia nelle posizioni che contano e di competere regolarmente per i punti.</p>
+        
+
+        <h3>Segui Alexander Albon sui Social:</h3>
+        <p>
+            <a href="https://www.instagram.com/alex_albon/" target="_blank">Instagram di Alexander Albon</a> | 
+            <a href="https://twitter.com/alex_albon" target="_blank">Twitter di Alexander Albon</a> | 
+            <a href="https://www.formula1.com/en/drivers/alexander-albon.html" target="_blank">Profilo F1 Ufficiale</a>
+        </p>
+        
+        <a href="piloti.html" class="back-link">← Torna a Piloti</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

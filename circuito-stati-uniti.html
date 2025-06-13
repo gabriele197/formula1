@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stati Uniti - FormulaRacing</title>
+  <style>
+    body { margin:0; font-family:'Inter',sans-serif; background:#00182E; color:#e0e0e0; line-height:1.6; }
+    header { background:#00A0E4; padding:25px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.4); }
+    header h1 { margin:0; font-size:3em; color:#fff; letter-spacing:2px; }
+    nav { background:#001026; padding:15px; display:flex; justify-content:center; flex-wrap:wrap; border-bottom:2px solid #004050; }
+    nav a { color:#00A0E4; margin:10px 20px; font-size:1.2em; font-weight:bold; text-decoration:none; transition:0.3s; }
+    nav a:hover { color:#fff; transform:translateY(-2px); }
+
+    .article-content { max-width:900px; margin:60px auto; padding:40px; background:#001026;
+      border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.6); border:1px solid #00A0E4; }
+    .article-content h1 { color:#00A0E4; font-size:3.2em; margin-bottom:30px; text-align:center;
+      text-shadow:2px 2px 5px rgba(0,0,0,0.5); }
+    .article-content p { margin-bottom:25px; font-size:1.15em; color:#c9c9c9; }
+    .article-content img { max-width:100%; display:block; margin:40px auto; border-radius:12px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.4); border:2px solid #fff; }
+    .article-content h3 { color:#fff; margin:40px 0 20px; font-size:2em;
+      border-bottom:1px solid #fff; padding-bottom:5px; }
+    .article-content ul { list-style:disc; margin-left:30px; margin-bottom:30px;
+      color:#e0e0e0; font-size:1.1em; }
+    .article-content a { color:#00A0E4; text-decoration:none;
+      border-bottom:1px dashed #00A0E4; transition:0.3s; }
+    .article-content a:hover { color:#8EEAF3; border-color:#8EEAF3; }
+
+    .video-container { position:relative; padding-bottom:56.25%; height:0;
+      overflow:hidden; margin:40px auto; background:#000; border-radius:12px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.6); border:2px solid #fff; }
+    .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
+    .back-link { display:inline-block; margin-top:50px; padding:15px 30px;
+      background:linear-gradient(45deg,#00A0E4,#5FDBFF); color:#000;
+      text-decoration:none; border-radius:10px; font-weight:bold;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.3s; }
+    .back-link:hover { transform:translateY(-3px) scale(1.02);
+      box-shadow:0 6px 15px rgba(0,0,0,0.5); }
+
+    footer { background:#001026; text-align:center; padding:25px; font-size:1em;
+      color:#a0a0a0; margin-top:60px; border-top:2px solid #004050; }
+
+    .circuit-stats table { width:100%; border-collapse:separate; border-spacing:0;
+      margin:30px 0; background:#00182E; border-radius:10px; overflow:hidden;
+      box-shadow:0 4px 15px rgba(0,0,0,0.4); }
+    .circuit-stats th, .circuit-stats td { padding:15px; text-align:left;
+      border-bottom:1px solid #003050; color:#e0e0e0; }
+    .circuit-stats th { background:#00A0E4; color:#000; font-weight:bold;
+      text-transform:uppercase; }
+    .circuit-stats tr:nth-child(even) { background:#001430; }
+    .circuit-stats tr:hover { background:#003050; cursor:pointer; }
+
+    @media(max-width:768px){
+      header h1 { font-size:2.2em; }
+      nav a { margin:8px; font-size:1em; }
+      .article-content { margin:30px 15px; padding:20px; }
+      .article-content h1 { font-size:2em; }
+      .article-content p, ul, .circuit-stats th, td { font-size:1em; }
+      .back-link { padding:10px 20px; font-size:1em; }
+      .circuit-stats table, thead, tbody, tr, th, td { display:block; width:100%; }
+      .circuit-stats thead { display:none; }
+      .circuit-stats tr { margin-bottom:10px; border:1px solid #003050;
+        border-radius:8px; overflow:hidden; }
+      .circuit-stats td { position:relative; padding-left:50%; text-align:right; }
+      .circuit-stats td::before { content:attr(data-label); position:absolute; left:10px;
+        width:calc(50% - 20px); text-align:left; font-weight:bold; color:#fff; }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>FormulaRacing</h1></header>
+  <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a>
+  </nav>
+
+  <div class="article-content">
+    <h1>Circuit of the Americas – GP Stati Uniti 2025</h1>
+
+    <p>Creato da Hermann Tilke e inaugurato nel 2012, il <strong>Circuit of the Americas (COTA)</strong> si trova ad Austin, Texas. È il primo circuito progettato appositamente per la Formula 1 in USA dopo l’epoca di Indianapolis e ospita il GP degli Stati Uniti con una cornice di oltre 120.000 spettatori.</p>
+
+    <p>Il tracciato è lungo 5,513 km, con 20 curve distribuite su 56 giri (gara totale: 308,405 km). Si distingue per il tratto iniziale in salita fino alla curva 1, un mix di “esses” ispirati a Silverstone, un tratto tipo “stadium” di Hockenheim e la tripla curva veloce 16‑18.</p>
+
+    <img src="https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/USA_Circuit.png" alt="Circuit of the Americas layout">
+
+    <h3>Punti Chiave</h3>
+    <ul>
+      <li><strong>Salita epica:</strong> pendenza pronunciata verso la curva 1, ideale per i sorpassi.</li>
+      <li><strong>Sequenza "S":</strong> curve 3‑6 seguono l’ispirazione di Maggotts‑Becketts di Silverstone.</li>
+      <li><strong>Stadium thrills:</strong> il settore 12‑15 è uno spazio ravvicinato ideale per i fan.</li>
+      <li><strong>Triplo curvone:</strong> le curve 16‑18 sono veloci e impegnative, prese moltissimo a gas aperto.</li>
+      <li><strong>Tecnico e fisico:</strong> mediamente 59 % del giro a pieno gas, con bisogno di downforce e meccanica bilanciata.</li>
+    </ul>
+
+    <h3>Dati Tecnici</h3>
+    <div class="circuit-stats">
+      <table>
+        <tr><th>Voce</th><th>Dettaglio</th></tr>
+        <tr><td data-label="Voce">Località</td><td data-label="Dettaglio">Austin, Texas, USA</td></tr>
+        <tr><td data-label="Voce">Lunghezza</td><td data-label="Dettaglio">5,513 km (3,426 mi)</td></tr>
+        <tr><td data-label="Voce">Giri</td><td data-label="Dettaglio">56</td></tr>
+        <tr><td data-label="Voce">Distanza gara</td><td data-label="Dettaglio">308,405 km</td></tr>
+        <tr><td data-label="Voce">Curve</td><td data-label="Dettaglio">20</td></tr>
+        <tr><td data-label="Voce">Record giro gara</td><td data-label="Dettaglio">1:36.169 – Charles Leclerc, 2019</td></tr>
+        <tr><td data-label="Voce">Velocità max</td><td data-label="Dettaglio">325 km/h</td></tr>
+        <tr><td data-label="Voce">Dislivello</td><td data-label="Dettaglio">≈ 40 m elevazione tra punti estremi</td></tr>
+      </table>
+    </div>
+
+    <h3>Momenti Recenti (2024)</h3>
+    <p>Nel GP 2024, la Ferrari ha centrato una storica doppietta: Leclerc in testa, seguito da Sainz a circa 8,5 secondi. Verstappen ha chiuso terzo, seguito da Norris quinto e Piastri sesto.</p>
+
+    
+
+    <h3>Approfondimenti</h3>
+    <p>
+      <a href="https://it.wikipedia.org/wiki/Circuit_of_the_Americas" target="_blank"><strong>Wikipedia – Circuit of the Americas</strong></a> |
+      <a href="https://www.formula1.com/en/racing/2025/united-states.html" target="_blank"><strong>Scheda F1 2025 – USA</strong></a> |
+      <a href="https://circuitoftheamericas.com" target="_blank"><strong>Sito ufficiale COTA</strong></a>
+    </p>
+
+    <a href="circuiti.html" class="back-link">← Torna a Circuiti</a>
+  </div>
+
+  <footer>&copy; 2025 FormulaRacing | Powered by Gabriele 🏁</footer>
+</body>
+</html>

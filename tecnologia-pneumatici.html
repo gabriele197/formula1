@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pneumatici da F1 - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0A0A0A; /* Nero profondo */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #00BFFF; /* Blu cielo, colore tech/innovazione */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #1A1A1A; /* Testo scuro su blu */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #0080FF; /* Blu più scuro per la nav bar */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #0055AA;
+        }
+        nav a {
+            color: #E0E0E0; /* Grigio chiaro */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #1A1A1A; /* Grigio scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #00BFFF; /* Bordo blu cielo */
+        }
+        .article-content h1 {
+            color: #00BFFF; /* Blu cielo */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #90EE90; /* Verde-giallo */
+        }
+        .article-content h3 {
+            color: #90EE90; /* Verde-giallo */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #90EE90;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #00BFFF; /* Blu cielo */
+            text-decoration: none;
+            border-bottom: 1px dashed #00BFFF;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #33DDFF;
+            border-color: #33DDFF;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #90EE90; /* Verde-giallo */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00BFFF, #00CCFF); /* Sfumatura blu cielo */
+            color: #0A0A0A; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #00CCFF, #33E0FF);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #0080FF; /* Blu più scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #0055AA;
+        }
+
+        /* Stili per le Tabelle */
+        .tech-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #2A2A2A; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .tech-stats th, .tech-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #3A3A3A; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .tech-stats th {
+            background-color: #00BFFF; /* Blu cielo per l'intestazione */
+            color: #1A1A1A;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .tech-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .tech-stats tr:nth-child(even) {
+            background-color: #202020; /* Riga pari più scura */
+        }
+        .tech-stats tr:hover {
+            background-color: #3A3A3A; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .tech-stats td, .tech-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .tech-stats table, .tech-stats tbody, .tech-stats thead, .tech-stats tr, .tech-stats th, .tech-stats td {
+                display: block;
+                width: 100%;
+            }
+            .tech-stats thead {
+                display: none;
+            }
+            .tech-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #3A3A3A;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .tech-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .tech-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #90EE90; /* Verde-giallo per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html"><a href="Piloti.html">Piloti</a> </a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Pneumatici da F1: L'Anello Cruciale tra Vettura e Pista</h1>
+        <p>I pneumatici sono l'unico punto di contatto tra la monoposto di Formula 1 e la pista, rendendoli uno dei componenti più critici per le prestazioni e la strategia di gara. Non si tratta di semplici gomme, ma di capolavori di ingegneria, progettati per operare in condizioni estreme di temperatura, carico e abrasione, e per fornire livelli di aderenza incredibili.</p>
+        
+        <p>Il fornitore unico di pneumatici per la Formula 1, attualmente Pirelli, produce diverse mescole per adattarsi a varie condizioni meteorologiche e strategie di gara. Dalle mescole più dure e durevoli, a quelle morbide che offrono il massimo grip ma con una vita limitata, fino ai pneumatici da bagnato, la scelta e la gestione delle gomme sono aspetti fondamentali che possono decidere l'esito di un Gran Premio. La loro degradazione, il riscaldamento e la finestra di funzionamento sono elementi che i team e i piloti monitorano costantemente.</p>
+
+        <img src="https://www.ansa.it/webimages/news_base/2022/6/13/7e25ec45d89f841f39daf210c31cd473.jpg" alt="[Image of Formula 1 tires with different colors]">
+        
+        <h3>Tipi di Mescole e Utilizzo</h3>
+        <p>Ogni mescola è progettata per un equilibrio specifico tra aderenza e durata.</p>
+        <ul>
+            <li>Mescole Slick (Ascutto): Identificate da colori specifici sulla spalla (es. rosso per soft, giallo per medium, bianco per hard). Offrono il massimo grip su pista asciutta.</li>
+            <li>Intermedie (Verde): Utilizzate per condizioni di bagnato leggero o pista che si sta asciugando, hanno un battistrada leggero per disperdere l'acqua.</li>
+            <li>Full Wet (Blu): Progettate per pioggia intensa, hanno un battistrada profondo per disperdere grandi quantità d'acqua e prevenire l'aquaplaning.</li>
+            <li>Finestra di Funzionamento: Ogni mescola ha una temperatura ottimale di esercizio; al di fuori di essa, le prestazioni e l'usura si riducono drasticamente.</li>
+        </ul>
+
+        <h3>Statistiche e Gestione in Gara</h3>
+        <div class="tech-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Caratteristica</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Caratteristica">Fornitore Unico</td>
+                        <td data-label="Dettaglio">Pirelli (dal 2011)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Caratteristica">Pressione Minima di Esercizio</td>
+                        <td data-label="Dettaglio">Regolamentata dalla FIA per sicurezza e prestazioni</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Caratteristica">Temperatura di Funzionamento (slick)</td>
+                        <td data-label="Dettaglio">~90°C - 120°C (a seconda della mescola)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Caratteristica">Usura</td>
+                        <td data-label="Dettaglio">Degradazione termica e superficiale, influenzata da stile di guida e carico</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Caratteristica">Larghezza (posteriore)</td>
+                        <td data-label="Dettaglio">405 mm (attualmente)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Caratteristica">Diametro del cerchio</td>
+                        <td data-label="Dettaglio">18 pollici (dal 2022)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Il Ruolo Strategico dei Pneumatici</h3>
+        <p>La gestione dei pneumatici è diventata uno degli aspetti più cruciali della strategia di gara in Formula 1. Il "pit stop", la velocità di cambio gomme, la capacità del pilota di gestire l'usura senza perdere ritmo, e la strategia di scegliere la mescola giusta al momento giusto, sono tutti fattori che possono fare la differenza tra la vittoria e la sconfitta. La Formula 1 continua a sviluppare i pneumatici per trovare il giusto equilibrio tra spettacolo, sfida e sostenibilità, con materiali sempre più avanzati e processi produttivi all'avanguardia.</p>
+        
+
+        <h3>Risorse Aggiuntive:</h3>
+        <p>
+            <a href="https://it.wikipedia.org/wiki/Pneumatico" target="_blank">Pneumatico su Wikipedia</a> | 
+            <a href="https://www.pirelli.com/global/it-it/motorsport/formula-1/f1-technical-regulations-tyres" target="_blank">Pirelli F1 Technical Regulations</a>
+        </p>
+        
+        <a href="tecnologia.html" class="back-link">← Torna all'elenco delle Tecnologie</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

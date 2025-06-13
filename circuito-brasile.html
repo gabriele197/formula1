@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Brasile - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #004D00; /* Verde scuro, come le foreste brasiliane */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #FFD700; /* Giallo oro, come la bandiera brasiliana */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #000080; /* Blu scuro, come la bandiera brasiliana */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #003300; /* Verde più scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #006400;
+        }
+        nav a {
+            color: #FFD700; /* Giallo oro */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #003300; /* Verde scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #FFD700; /* Bordo giallo oro */
+        }
+        .article-content h1 {
+            color: #FFD700; /* Giallo oro */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #000080; /* Blu scuro */
+        }
+        .article-content h3 {
+            color: #000080; /* Blu scuro */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #000080;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #FFD700; /* Giallo oro */
+            text-decoration: none;
+            border-bottom: 1px dashed #FFD700;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #FFE566;
+            border-color: #FFE566;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #000080; /* Blu scuro */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna ai circuiti" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #004D00, #006400); /* Sfumatura Verde */
+            color: #FFD700; /* Testo giallo oro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #006400, #008000);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #003300; /* Verde più scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #006400;
+        }
+
+        /* Stili per le Tabelle */
+        .circuit-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #004400; /* Sfondo tabella verde scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .circuit-stats th, .circuit-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #005500; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .circuit-stats th {
+            background-color: #FFD700; /* Giallo oro per l'intestazione */
+            color: #000080; /* Blu scuro */
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .circuit-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .circuit-stats tr:nth-child(even) {
+            background-color: #003A00; /* Riga pari più scura */
+        }
+        .circuit-stats tr:hover {
+            background-color: #005500; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .circuit-stats td, .circuit-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .circuit-stats table, .circuit-stats tbody, .circuit-stats thead, .circuit-stats tr, .circuit-stats th, .circuit-stats td {
+                display: block;
+                width: 100%;
+            }
+            .circuit-stats thead {
+                display: none;
+            }
+            .circuit-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #005500;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .circuit-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .circuit-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #000080; /* Blu scuro per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Gran Premio del Brasile: L'Emblema delle Emozioni a Interlagos</h1>
+        <p>L'Autódromo José Carlos Pace, più comunemente noto come Interlagos, situato a San Paolo, Brasile, è uno dei circuiti più iconici e amati della Formula 1. Con la sua natura anti-oraria, le sue pendenze naturali e un layout che favorisce le gare emozionanti, Interlagos è spesso il teatro di finali di campionato drammatiche e sorpassi spettacolari. È un circuito che respira la storia del motorsport brasiliano, intriso del ricordo di leggende come Ayrton Senna.</p>
+        
+        <p>Il tracciato è relativamente corto ma incredibilmente vario, con una lunga sezione in salita dopo la curva "Subida do Lago" che porta al rettilineo principale, dove l'uso della scia e del DRS è fondamentale per i sorpassi. Le sue curve iconiche come la "S do Senna" e la "Curva do Sol" richiedono precisione e coraggio. L'altitudine di San Paolo influisce sulle prestazioni del motore e sulla gestione degli pneumatici, aggiungendo un ulteriore livello di sfida.</p>
+
+        <img src="https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Brazil_Circuit.png" alt="[Immagine dell'Autódromo José Carlos Pace, Interlagos]">
+        
+        <h3>Caratteristiche e Sfide Tecniche</h3>
+        <p>Interlagos è un circuito che richiede un setup bilanciato tra carico aerodinamico e velocità, con un occhio di riguardo alla gestione delle gomme e del motore in altitudine.</p>
+        <ul>
+            <li>S do Senna: Una delle sequenze di curve più famose e impegnative, dove si decide gran parte del giro.</li>
+            <li>Tracciato Anti-Orario: Mette alla prova i muscoli del collo dei piloti in modo diverso rispetto alla maggior parte dei circuiti.</li>
+            <li>Pendenze Naturali: L'altitudine e le variazioni di pendenza aggiungono complessità aerodinamica e meccanica.</li>
+            <li>Lunghe Aree DRS: Offrono opportunità di sorpasso strategiche, soprattutto sul rettilineo principale in salita.</li>
+            <li>Meteo Variabile: Come Spa, Interlagos è spesso influenzato da improvvisi acquazzoni che rendono le gare imprevedibili.</li>
+        </ul>
+
+        <h3>Statistiche Chiave del Circuito</h3>
+        <div class="circuit-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Località</td>
+                        <td data-label="Dettaglio">San Paolo, Brasile</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Lunghezza Circuito</td>
+                        <td data-label="Dettaglio">4.309 km (2.677 miglia)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Numero di Giri (F1)</td>
+                        <td data-label="Dettaglio">71</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Record sul Giro (gara)</td>
+                        <td data-label="Dettaglio">1:10.540 (Lewis Hamilton, Mercedes, 2018)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Curve</td>
+                        <td data-label="Dettaglio">15</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Prima Edizione GP F1</td>
+                        <td data-label="Dettaglio">1973</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Caratteristica Famosa</td>
+                        <td data-label="Dettaglio">S do Senna</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Momenti Memorabili e L'Eredità di Senna</h3>
+        <p>Interlagos è stato il palcoscenico di innumerevoli momenti drammatici e iconici, spesso decisivi per il campionato del mondo. La vittoria di Ayrton Senna nel 1991, ottenuta con il cambio bloccato in sesta marcia, rimane uno dei momenti più epici della sua carriera e della storia della F1. Il circuito ha visto anche titoli assegnati all'ultima curva, come nel 2008 con Lewis Hamilton o nel 2021 con Max Verstappen. L'atmosfera è sempre elettrizzante, con tifosi brasiliani appassionati che creano uno spettacolo unico.</p>
+        
+        
+
+        <h3>Risorse Aggiuntive:</h3>
+        <p>
+            <a href="https://it.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace" target="_blank">Autódromo José Carlos Pace su Wikipedia</a> | 
+            <a href="https://autodromodeinterlagos.com.br/" target="_blank">Sito Ufficiale Autódromo de Interlagos</a>
+        </p>
+        
+        <a href="circuiti.html" class="back-link">← Torna all'elenco dei Circuiti</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

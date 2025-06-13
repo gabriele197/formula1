@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zandvoort - FormulaRacing</title>
+  <style>
+    /* Stili Generali */
+    body { margin:0; font-family:'Inter', sans-serif; background:#002A36; color:#e0e0e0; line-height:1.6; }
+    header { background:#FF6F00; padding:25px 15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.4); }
+    header h1 { margin:0; font-size:3em; color:#000; letter-spacing:2px; }
+    nav { background:#001F26; padding:15px; display:flex; justify-content:center; flex-wrap:wrap; border-bottom:2px solid #004E64; }
+    nav a { color:#FF6F00; text-decoration:none; margin:10px 20px; font-weight:bold; transition:0.3s; }
+    nav a:hover { color:#fff; transform:translateY(-2px); }
+
+    .article-content {
+      max-width:900px; margin:60px auto; padding:40px;
+      background:#001F26; border-radius:15px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.6); border:1px solid #FF6F00;
+    }
+    .article-content h1 {
+      color:#FF6F00; font-size:3.2em; margin-bottom:30px;
+      text-align:center; text-shadow:2px 2px 5px rgba(0,0,0,0.5);
+    }
+    .article-content p { margin-bottom:25px; font-size:1.15em; color:#c9c9c9; }
+    .article-content img {
+      max-width:100%; display:block; margin:40px auto;
+      border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.4);
+      border:2px solid #fff;
+    }
+    .article-content h3 {
+      color:#fff; margin:40px 0 20px; font-size:2em;
+      border-bottom:1px solid #fff; padding-bottom:5px;
+    }
+    .article-content ul {
+      list-style:disc; margin-left:30px; margin-bottom:30px;
+      color:#e0e0e0; font-size:1.1em;
+    }
+    .article-content a {
+      color:#FF6F00; text-decoration:none;
+      border-bottom:1px dashed #FF6F00; transition:0.3s;
+    }
+    .article-content a:hover { color:#FFD28A; border-color:#FFD28A; }
+
+    .video-container {
+      position:relative; padding-bottom:56.25%; height:0;
+      overflow:hidden; margin:40px auto; background:#000;
+      border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.6);
+      border:2px solid #fff;
+    }
+    .video-container iframe {
+      position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+    }
+
+    .back-link {
+      display:inline-block; margin-top:50px; padding:15px 30px;
+      background:linear-gradient(45deg,#FF6F00,#FFAA40); color:#000;
+      text-decoration:none; border-radius:10px; font-weight:bold;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.3s;
+    }
+    .back-link:hover {
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:0 6px 15px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      background:#001F26; text-align:center; padding:25px;
+      font-size:1em; color:#a0a0a0; margin-top:60px;
+      border-top:2px solid #004E64;
+    }
+
+    .circuit-stats table {
+      width:100%; border-collapse:separate; border-spacing:0;
+      margin:30px 0; background:#002A36; border-radius:10px;
+      overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.4);
+    }
+    .circuit-stats th, .circuit-stats td {
+      padding:15px; text-align:left;
+      border-bottom:1px solid #004E64; color:#e0e0e0;
+    }
+    .circuit-stats th {
+      background:#FF6F00; color:#000; font-weight:bold; text-transform:uppercase;
+    }
+    .circuit-stats tr:nth-child(even) { background:#002233; }
+    .circuit-stats tr:hover { background:#004E64; cursor:pointer; }
+
+    @media(max-width:768px){
+      header h1 { font-size:2.2em; }
+      nav a { margin:8px; font-size:1em; }
+      .article-content { margin:30px 15px; padding:20px; }
+      .article-content h1 { font-size:2em; }
+      .article-content p, ul, .circuit-stats th, td { font-size:1em; }
+      .circuit-stats table, tbody, thead, tr, th, td { display:block; width:100%; }
+      .circuit-stats thead { display:none; }
+      .circuit-stats tr {
+        margin-bottom:10px; border:1px solid #004E64;
+        border-radius:8px; overflow:hidden;
+      }
+      .circuit-stats td {
+        position:relative; padding-left:50%; text-align:right;
+      }
+      .circuit-stats td::before {
+        content:attr(data-label); position:absolute; left:10px;
+        width:calc(50% - 20px); text-align:left; font-weight:bold; color:#fff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FormulaRacing</h1>
+  </header>
+
+  <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a>
+  </nav>
+
+  <div class="article-content">
+    <h1>Circuit Zandvoort – Emozione tra le Dune</h1>
+
+    <p>Immerso nelle dune del Mare del Nord, il <strong>Circuit Zandvoort</strong> ha riacceso la passione per i GP olandesi dal 2021, dopo 36 anni di assenza. Inaugurato nel 1948, ha ospitato il primo GP F1 nel 1952, quando <em>Alberto Ascari</em> dominò con una triplice vittoria Ferrari.</p>
+
+    <p>Il tracciato, lungo 4.259 km, si snoda per 72 giri in una cornice fiabesca: dune, curve veloci e sopraelevazioni tra cui la celebre Tarzanbocht, Hunserug e la pendenza accentuata della Scheivlak, curve che richiedono precisione e coraggio.</p>
+
+    <img src="https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Netherlands_Circuit.png" alt="Circuito di Zandvoort">
+
+    <h3>Punti Chiave</h3>
+    <ul>
+      <li><strong>Atmosfera unica:</strong> sabbia portata dal vento, scenari mozzafiato sul mare, vibe da festival motorsport.</li>
+      <li><strong>Cambi di pendenza drammatici:</strong> gli avvallamenti generano forze laterali fino a 5G e mettono alla prova piloti e gomme.</li>
+      <li><strong>Banche e carico aerodinamico:</strong> le curve 3 e 14 offrono inclinazioni doppie rispetto ad Indianapolis.</li>
+      <li><strong>Qualifica decisiva:</strong> pista stretta e sorpassi difficili rendono la partenza e il posizionamento cruciale.</li>
+    </ul>
+
+    <h3>Dati Tecnici</h3>
+    <div class="circuit-stats">
+      <table>
+        <tr><th>Voce</th><th>Dettaglio</th></tr>
+        <tr><td data-label="Voce">Località</td><td data-label="Dettaglio">Zandvoort, Paesi Bassi</td></tr>
+        <tr><td data-label="Voce">Lunghezza</td><td data-label="Dettaglio">4.259 km</td></tr>
+        <tr><td data-label="Voce">Numero giri</td><td data-label="Dettaglio">72</td></tr>
+        <tr><td data-label="Voce">Distanza Gara</td><td data-label="Dettaglio">306.587 km</td></tr>
+        <tr><td data-label="Voce">Curve</td><td data-label="Dettaglio">14</td></tr>
+        <tr><td data-label="Voce">Primo GP</td><td data-label="Dettaglio">1952</td></tr>
+        <tr><td data-label="Voce">Record Giro (gara)</td><td data-label="Dettaglio">1:11.097 – Lewis Hamilton, 2021.</td></tr>
+        <tr><td data-label="Voce">Record Giro (qualifica)</td><td data-label="Dettaglio">1:08.885 – Max Verstappen, 2021.</td></tr>
+      </table>
+    </div>
+
+    <h3>Momenti Recenti</h3>
+    <p>Nel GP 2024, <strong>Lando Norris</strong> ha spezzato l'egemonia di Max Verstappen, conquistando vittoria, pole e giro veloce, staccando Verstappen di 22,9 s. Un trionfo memorabile nella storia moderna del circuito.</p>
+
+    
+
+    <h3>Risorse Utili</h3>
+    <p>
+      <a href="https://it.wikipedia.org/wiki/Circuito_di_Zandvoort" target="_blank"><strong>Wikipedia – Zandvoort</strong></a> |
+      <a href="https://en.wikipedia.org/wiki/Dutch_Grand_Prix" target="_blank"><strong>Dutch GP – Info F1</strong></a> |
+      <a href="https://www.formula1.com/en/racing/2024/netherlands.html" target="_blank"><strong>Pagina Ufficiale F1 2024</strong></a>
+    </p>
+
+    <a href="circuiti.html" class="back-link">← Torna a Circuiti</a>
+  </div>
+
+  <footer>
+    &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+  </footer>
+</body>
+</html>

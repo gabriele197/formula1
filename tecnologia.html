@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tecnologie - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0A0A0A; /* Nero profondo per un tema high-tech */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #00BFFF; /* Blu cielo, colore tech/innovazione */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #1A1A1A; /* Testo scuro su blu */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #0080FF; /* Blu più scuro per la nav bar */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #0055AA;
+        }
+        nav a {
+            color: #E0E0E0; /* Grigio chiaro */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Elenco Tecnologie */
+        .tech-list-container {
+            max-width: 1200px; /* Larghezza maggiore per la griglia */
+            margin: 60px auto;
+            padding: 40px 20px;
+            background: #1A1A1A; /* Sfondo scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #00BFFF; /* Bordo blu cielo */
+            text-align: center;
+        }
+        .tech-list-container h1 {
+            color: #00BFFF; /* Blu cielo */
+            font-size: 3.2em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Griglia responsiva */
+            gap: 30px; /* Spazio tra le card */
+            justify-content: center;
+        }
+
+        .tech-card {
+            background-color: #2A2A2A; /* Sfondo card scuro */
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: 1px solid #90EE90; /* Bordo verde-giallo per risalto */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        }
+
+        .tech-card img {
+            width: 100%;
+            height: 180px; /* Altezza fissa per le immagini */
+            object-fit: cover; /* Assicura che l'immagine copra l'area */
+            border-bottom: 1px solid #90EE90;
+            border-radius: 12px 12px 0 0; /* Solo bordi superiori arrotondati */
+        }
+
+        .tech-card h2 {
+            font-size: 1.8em;
+            color: #90EE90; /* Verde-giallo brillante */
+            margin: 20px 10px 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .tech-card p {
+            font-size: 1em;
+            color: #c9c9c9;
+            margin: 0 15px 20px;
+            flex-grow: 1; /* Permette al paragrafo di occupare lo spazio disponibile */
+        }
+
+        .tech-card .view-tech-link {
+            display: block;
+            background: linear-gradient(45deg, #00BFFF, #00CCFF); /* Sfumatura blu cielo */
+            color: #1A1A1A; /* Testo scuro per contrasto */
+            padding: 12px 0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border-radius: 0 0 10px 10px; /* Solo bordi inferiori arrotondati */
+        }
+
+        .tech-card .view-tech-link:hover {
+            background: linear-gradient(45deg, #00CCFF, #33E0FF);
+            color: #000000;
+        }
+
+        /* Stile per il link "Torna alla homepage" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00BFFF, #00CCFF); /* Sfumatura blu cielo */
+            color: #0A0A0A; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #00CCFF, #33E0FF);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #0080FF; /* Blu più scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #0055AA;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .tech-list-container { margin: 30px 15px; padding: 20px; }
+            .tech-list-container h1 { font-size: 2em; margin-bottom: 30px; }
+            .tech-grid { grid-template-columns: 1fr; } /* Una colonna su mobile */
+            .tech-card { margin-bottom: 20px; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html"><a href="Piloti.html">Piloti</a> </a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a>
+    </nav>
+
+    <div class="tech-list-container">
+        <h1>Tecnologie Chiave della Formula 1</h1>
+        
+        <div class="tech-grid">
+            <!-- Scheda Tecnologia: Drag Reduction System (DRS) -->
+            <div class="tech-card">
+                <img src="https://placehold.co/400x180/00BFFF/1A1A1A?text=DRS" alt="[Immagine del sistema DRS]">
+                <h2>Drag Reduction System (DRS)</h2>
+                <p>Un sistema che permette ai piloti di aprire un'ala posteriore mobile per ridurre la resistenza aerodinamica e aumentare la velocità in rettilineo.</p>
+                <a href="tecnologia-drs.html" class="view-tech-link">Scopri di più</a>
+            </div>
+
+            <!-- Scheda Tecnologia: Energy Recovery System (ERS) -->
+            <div class="tech-card">
+                <img src="https://placehold.co/400x180/90EE90/1A1A1A?text=ERS" alt="[Immagine del sistema ERS]">
+                <h2>Energy Recovery System (ERS)</h2>
+                <p>Un sistema ibrido avanzato che recupera energia dal calore dello scarico e dalla frenata, utilizzandola per la propulsione extra.</p>
+                <a href="tecnologia-ers.html" class="view-tech-link">Scopri di più</a>
+            </div>
+
+            <!-- Scheda Tecnologia: Effetto Suolo -->
+            <div class="tech-card">
+                <img src="https://placehold.co/400x180/00BFFF/1A1A1A?text=Effetto+Suolo" alt="[Immagine dell'effetto suolo su una vettura F1]">
+                <h2>Effetto Suolo</h2>
+                <p>Un principio aerodinamico che genera deportanza sigillando il flusso d'aria sotto la vettura, aspirandola verso il basso.</p>
+                <a href="tecnologia-effetto-suolo.html" class="view-tech-link">Scopri di più</a>
+            </div>
+
+            <!-- Scheda Tecnologia: Monoscocca in Fibra di Carbonio -->
+            <div class="tech-card">
+                <img src="https://placehold.co/400x180/90EE90/1A1A1A?text=Monoscocca" alt="[Immagine di una monoscocca in fibra di carbonio]">
+                <h2>Monoscocca in Fibra di Carbonio</h2>
+                <p>Il cuore strutturale della vettura, ultra-resistente e leggera, che forma l'abitacolo e protegge il pilota in caso di impatto.</p>
+                <a href="tecnologia-monoscocca.html" class="view-tech-link">Scopri di più</a>
+            </div>
+
+            <!-- Puoi aggiungere altre schede per altre tecnologie qui -->
+            <!-- Esempio: Sospensioni Push-Rod/Pull-Rod -->
+            <div class="tech-card">
+                <img src="https://placehold.co/400x180/00BFFF/1A1A1A?text=Sospensioni" alt="[Immagine di un sistema di sospensioni F1]">
+                <h2>Sistemi di Sospensione</h2>
+                <p>Le complesse configurazioni push-rod e pull-rod che collegano le ruote al telaio, ottimizzando l'aderenza meccanica.</p>
+                <a href="tecnologia-sospensioni.html" class="view-tech-link">Scopri di più</a>
+            </div>
+
+            <!-- Esempio: Pneumatici -->
+            <div class="tech-card">
+                <img src="https://placehold.co/400x180/90EE90/1A1A1A?text=Pneumatici" alt="[Immagine di pneumatici F1]">
+                <h2>Pneumatici da F1</h2>
+                <p>Il componente cruciale per l'aderenza, con mescole e costruzioni specifiche per ogni condizione e strategia di gara.</p>
+                <a href="tecnologia-pneumatici.html" class="view-tech-link">Scopri di più</a>
+            </div>
+
+        </div>
+        
+        <a href="Untitled-1.html#ultimi" class="back-link">← Torna alla homepage</a>
+    </div> 
+            
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

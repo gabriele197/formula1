@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Canada - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #4D0000; /* Rosso scuro, per il tema canadese */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #FF0000; /* Rosso vivo, colore della bandiera canadese */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #FFFFFF; /* Bianco */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #2A0000; /* Rosso ancora più scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #5A0000;
+        }
+        nav a {
+            color: #FFFFFF; /* Bianco */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #FFD700; /* Oro per contrasto */
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #1A0000; /* Rosso scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #FF0000; /* Bordo rosso vivo */
+        }
+        .article-content h1 {
+            color: #FF0000; /* Rosso vivo */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #FFFFFF; /* Bianco */
+        }
+        .article-content h3 {
+            color: #FFFFFF; /* Bianco */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #FFFFFF;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #FF0000; /* Rosso vivo */
+            text-decoration: none;
+            border-bottom: 1px dashed #FF0000;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #FF4D4D;
+            border-color: #FF4D4D;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #FFFFFF; /* Bianco */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna ai circuiti" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FF0000, #FF4D4D); /* Sfumatura Rosso */
+            color: #FFFFFF; /* Testo chiaro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FF4D4D, #FF7070);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #2A0000; /* Rosso ancora più scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #5A0000;
+        }
+
+        /* Stili per le Tabelle */
+        .circuit-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #3A0000; /* Sfondo tabella rosso scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .circuit-stats th, .circuit-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #4A0000; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .circuit-stats th {
+            background-color: #FF0000; /* Rosso vivo per l'intestazione */
+            color: #FFFFFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .circuit-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .circuit-stats tr:nth-child(even) {
+            background-color: #300000; /* Riga pari più scura */
+        }
+        .circuit-stats tr:hover {
+            background-color: #4A0000; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .circuit-stats td, .circuit-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .circuit-stats table, .circuit-stats tbody, .circuit-stats thead, .circuit-stats tr, .circuit-stats th, .circuit-stats td {
+                display: block;
+                width: 100%;
+            }
+            .circuit-stats thead {
+                display: none;
+            }
+            .circuit-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #4A0000;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .circuit-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .circuit-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #FFFFFF; /* Bianco per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Gran Premio del Canada: La Velocità sull'Isola di Notre Dame</h1>
+        <p>Il Circuit Gilles Villeneuve, situato sull'Île Notre-Dame a Montreal, Canada, è un circuito semi-permanente amato per la sua combinazione unica di lunghi rettilinei, forti frenate e chicane veloci. Ospita il Gran Premio del Canada fin dal 1978 ed è celebre per le sue gare emozionanti e spesso imprevedibili, che mettono alla prova sia la potenza delle monoposto che il coraggio dei piloti.</p>
+        
+        <p>Il circuito è famoso per il suo ultimo settore, che include una sequenza di chicane veloci che portano al temibile "Muro dei Campioni" (Wall of Champions), un muro esterno alla curva 14 che ha visto la fine di molte gare per campioni blasonati. Le caratteristiche del tracciato favoriscono i sorpassi, grazie alle numerose zone di frenata pesante e ai lunghi tratti in cui è possibile sfruttare la scia e il DRS. Montreal è un appuntamento fisso e molto apprezzato nel calendario, con un'atmosfera sempre vibrante e un pubblico caloroso.</p>
+
+        <img src="https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Canada_Circuit.png" alt="[Immagine del Circuit Gilles Villeneuve]">
+        
+        <h3>Caratteristiche e Sfide Tecniche</h3>
+        <p>Il Gran Premio del Canada è una sfida unica, che richiede un setup che bilanci velocità massima e stabilità in frenata.</p>
+        <ul>
+            <li>Lunghi Rettilinei e Forti Frenate: Le lunghe sezioni veloci sono interrotte da chicane che richiedono frenate molto potenti, rendendo cruciale la stabilità in frenata.</li>
+            <li>Muro dei Campioni: Il muro all'uscita dell'ultima chicane è notoriamente stretto e punisce il minimo errore.</li>
+            <li>Basso Carico Aerodinamico: Le vetture vengono configurate con un carico aerodinamico relativamente basso per massimizzare la velocità sui rettilinei.</li>
+            <li>Gestione Pneumatici: L'asfalto poco abrasivo e le forti frenate richiedono una buona gestione delle gomme e del surriscaldamento dei freni.</li>
+        </ul>
+
+        <h3>Statistiche Chiave del Circuito</h3>
+        <div class="circuit-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Località</td>
+                        <td data-label="Dettaglio">Montreal, Quebec, Canada</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Lunghezza Circuito</td>
+                        <td data-label="Dettaglio">4.361 km (2.709 miglia)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Numero di Giri (F1)</td>
+                        <td data-label="Dettaglio">70</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Record sul Giro (gara)</td>
+                        <td data-label="Dettaglio">1:13.078 (Valtteri Bottas, Mercedes, 2019)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Curve</td>
+                        <td data-label="Dettaglio">14</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Prima Edizione GP F1</td>
+                        <td data-label="Dettaglio">1978</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Caratteristica Famosa</td>
+                        <td data-label="Dettaglio">Il "Muro dei Campioni" (Wall of Champions)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Momenti Memorabili e La Forza della Pista</h3>
+        <p>Il Gran Premio del Canada è stato il teatro di molte gare epiche, tra cui vittorie sorprendenti e duelli al cardiopalma. La pioggia è spesso un fattore che aggiunge imprevedibilità, rendendo le gare ancora più avvincenti. La natura del circuito, che non perdona gli errori, premia i piloti più precisi e audaci. Montreal rimane una delle tappe più attese della stagione, combinando l'azione in pista con un'atmosfera festosa e accogliente.</p>
+        
+        
+
+        <h3>Risorse Aggiuntive:</h3>
+        <p>
+            <a href="https://it.wikipedia.org/wiki/Circuit_Gilles_Villeneuve" target="_blank">Circuit Gilles Villeneuve su Wikipedia</a> | 
+            <a href="https://www.grandprix.ca/" target="_blank">Sito Ufficiale Formula 1 Grand Prix du Canada</a>
+        </p>
+        
+        <a href="circuiti.html" class="back-link">← Torna all'elenco dei Circuiti</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

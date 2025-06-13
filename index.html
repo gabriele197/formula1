@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FormulaRacing - Homepage</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #000814;
+            color: #ffffff;
+        }
+        header {
+            background: #003566;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #00b4d8;
+        }
+        nav {
+            background: #001d3d;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #ffd60a;
+            text-decoration: none;
+            margin: 10px 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+        /* Stili per il link che avvolge l'intera anteprima dell'articolo */
+        .article-link {
+            text-decoration: none; /* Rimuove la sottolineatura standard */
+            color: inherit; /* Mantiene il colore del testo ereditato */
+            display: block; /* Rende il link un blocco per occupare tutta l'area della card */
+            margin-bottom: 20px; /* Spazio tra le card */
+        }
+        .article-preview {
+            background: #012a4a;
+            border-radius: 10px;
+            padding: 20px;
+            transition: background 0.3s ease, transform 0.3s ease; /* Aggiunto transform per effetto hover */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Ombra leggera */
+        }
+        .article-preview:hover {
+            background: #014f86;
+            transform: translateY(-5px); /* Sposta leggermente in alto al passaggio del mouse */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Ombra più pronunciata */
+        }
+        .article-preview h2 {
+            color: #00b4d8;
+            margin-top: 0;
+            margin-bottom: 10px; /* Spazio sotto il titolo */
+        }
+        .article-preview p {
+            color: #e0e0e0; /* Assicurati che il testo del paragrafo sia leggibile */
+        }
+        /* Stili per il link del "Seguimi su Instagram" */
+        .follow {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .follow a {
+            background: #00b4d8;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background 0.3s ease;
+        }
+        .follow a:hover {
+            background: #0096c7;
+        }
+        footer {
+            background: #001d3d;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Ultimi articoli</a> 
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a> 
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="container" id="ultimi">
+        <a href="articolo_formula1_estremo.html" class="article-link">
+            <div class="article-preview">
+                <h2>🏎️ Formula 1: Lo sport più estremo del mondo</h2>
+                <p>Scopri perché la F1 è una combinazione di velocità, rischio e ingegno. Un viaggio tra motori, mente e muscoli. Guarda anche il video!</p>
+            </div>
+        </a>
+
+        <a href="articolo_partenza_perfetta.html" class="article-link">
+            <div class="article-preview">
+                <h2>🚥 La partenza perfetta in Formula 1</h2>
+                <p>La partenza è uno dei momenti più emozionanti e cruciali di una gara di Formula 1. Scopri le strategie dei piloti per scattare al semaforo verde e conquistare posizioni nei primi secondi.</p>
+            </div>
+        </a>
+        
+        <a href="La Rinascita di Aston Martin in Formula 1.html" class="article-link">
+            <div class="article-preview">
+                <h2>🏎️La Rinascita di Aston Martin in Formula 1</h2>
+                <p>Evoluzione recente di Aston Martin nel mondiale F1</p>
+            </div>
+        </a>
+        <a href="gabriele_sponsorship.html" class="article-link">
+            <div class="article-preview">
+               <h2>🏎️Gabriele, il mio sogno</h2>
+               <p>Descrizione del mio obbiettivo</p>
+            </div>
+        </a>
+
+        <div class="follow">
+            <a href="https://www.instagram.com/gabriele__tes/" target="_blank">📱 Seguimi su Instagram</a>
+        </div>
+    </div>
+    
+    <a href="index.html"></a>
+    
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>
+

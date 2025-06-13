@@ -1,0 +1,395 @@
+ <!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Circuiti - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0A0A10; /* Sfondo scuro neutro per la pagina indice */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #FFD700; /* Oro, per un tocco di prestigio */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #1A1A1A; /* Testo scuro su oro */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #222222; /* Grigio scuro per la nav bar */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #555555;
+        }
+        nav a {
+            color: #FFD700; /* Oro */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Elenco Circuiti */
+        .circuits-list-container {
+            max-width: 1200px; /* Larghezza maggiore per la griglia */
+            margin: 60px auto;
+            padding: 40px 20px;
+            background: #1A1A1A; /* Sfondo scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #FFD700; /* Bordo oro */
+            text-align: center;
+        }
+        .circuits-list-container h1 {
+            color: #FFD700; /* Oro */
+            font-size: 3.2em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .circuits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Griglia responsiva */
+            gap: 30px; /* Spazio tra le card */
+            justify-content: center;
+        }
+
+        .circuit-card {
+            background-color: #2A2A2A; /* Sfondo card scuro */
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: 1px solid #FFD700; /* Bordo oro */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .circuit-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        }
+
+        .circuit-card img {
+            width: 100%;
+            height: 180px; /* Altezza fissa per le immagini */
+            object-fit: cover; /* Assicura che l'immagine copra l'area */
+            border-bottom: 1px solid #FFD700;
+            border-radius: 12px 12px 0 0; /* Solo bordi superiori arrotondati */
+        }
+
+        .circuit-card h2 {
+            font-size: 1.8em;
+            color: #FFFFFF; /* Bianco puro */
+            margin: 20px 10px 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .circuit-card p {
+            font-size: 1em;
+            color: #c9c9c9;
+            margin: 0 15px 20px;
+            flex-grow: 1; /* Permette al paragrafo di occupare lo spazio disponibile */
+        }
+
+        .circuit-card .view-circuit-link {
+            display: block;
+            background: linear-gradient(45deg, #FFD700, #FFC107); /* Sfumatura Oro */
+            color: #1A1A1A; /* Testo scuro per contrasto */
+            padding: 12px 0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border-radius: 0 0 10px 10px; /* Solo bordi inferiori arrotondati */
+        }
+
+        .circuit-card .view-circuit-link:hover {
+            background: linear-gradient(45deg, #FFC107, #FFAB00);
+            color: #000000;
+        }
+
+        /* Stile per il link "Torna alla homepage" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FFD700, #FFC107); /* Sfumatura Oro */
+            color: #0A0A0A; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FFC107, #FFAB00);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #222222; /* Grigio scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #555555;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .circuits-list-container { margin: 30px 15px; padding: 20px; }
+            .circuits-list-container h1 { font-size: 2em; margin-bottom: 30px; }
+            .circuits-grid { grid-template-columns: 1fr; } /* Una colonna su mobile */
+            .circuit-card { margin-bottom: 20px; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="circuits-list-container">
+        <h1>I Circuiti del Campionato di Formula 1 2025</h1>
+        
+        <div class="circuits-grid">
+            <!-- Scheda Circuito: AUSTRALIAN GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/FFCD00/000000?text=Melbourne+Circuit" alt="[Image of Melbourne Circuit]">
+                <h2>Australian Grand Prix</h2>
+                <p>Il tradizionale benvenuto alla stagione F1, un circuito cittadino veloce e fluido.</p>
+                <a href="circuito-australia.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: CHINESE GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/DE0000/F0F0F0?text=Shanghai+Circuit" alt="[Image of Shanghai International Circuit]">
+                <h2>Chinese Grand Prix</h2>
+                <p>Un tracciato con un design unico, caratterizzato da lunghi rettilinei e curve tecniche.</p>
+                <a href="circuito-cina.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: JAPANESE GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/FF0000/FFFFFF?text=Suzuka+Circuit" alt="[Image of Suzuka International Racing Course]">
+                <h2>Japanese Grand Prix</h2>
+                <p>Un classico del motorsport, amato dai piloti per le sue curve veloci e impegnative.</p>
+                <a href="circuito-giappone.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: AIR BAHRAIN GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/DA291C/FFFFFF?text=Bahrain+Circuit" alt="[Image of Bahrain International Circuit]">
+                <h2>Bahrain Grand Prix</h2>
+                <p>Un circuito moderno nel deserto, noto per le sue gare notturne e le intense battaglie.</p>
+                <a href="circuito-bahrain.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: SAUDI ARABIAN GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/000000/00FF00?text=Jeddah+Circuit" alt="[Image of Jeddah Corniche Circuit]">
+                <h2>Saudi Arabian Grand Prix</h2>
+                <p>Il circuito stradale più veloce del mondo, un'emozionante sfida tra i muri.</p>
+                <a href="circuito-arabia-saudita.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: MIAMI GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/FF8000/FFFFFF?text=Miami+Circuit" alt="[Image of Miami International Autodrome]">
+                <h2>Miami Grand Prix</h2>
+                <p>Un vibrante circuito cittadino attorno all'Hard Rock Stadium, con un'atmosfera unica.</p>
+                <a href="circuito-miami.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: GRAN PREMIO DELL'EMILIA-ROMAGNA 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/B30000/FFFFFF?text=Imola+Circuit" alt="[Image of Imola Circuit]">
+                <h2>Emilia-Romagna Grand Prix</h2>
+                <p>Un circuito storico italiano, tecnico e impegnativo, con una ricca storia.</p>
+                <a href="circuito-imola.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: GRAND PRIX DE MONACO 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/0000CD/FFFFFF?text=Monaco+Circuit" alt="[Image of Circuit de Monaco]">
+                <h2>Monaco Grand Prix</h2>
+                <p>L'iconico circuito cittadino per eccellenza, dove la precisione è tutto.</p>
+                <a href="circuito-monaco.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: GRAN PREMIO DE ESPAÑA 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/FFD700/000000?text=Barcelona+Circuit" alt="[Image of Circuit de Barcelona-Catalunya]">
+                <h2>Spanish Grand Prix</h2>
+                <p>Un circuito completo e impegnativo, spesso usato per i test prestagionali.</p>
+                <a href="circuito-spagna.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: F1 GRAND PRIX DU CANADA 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/FF0000/FFFFFF?text=Montreal+Circuit" alt="[Image of Circuit Gilles Villeneuve]">
+                <h2>Canadian Grand Prix</h2>
+                <p>Un circuito semi-permanente ad alta velocità, famoso per il "Muro dei Campioni".</p>
+                <a href="circuito-canada.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: AUSTRIAN GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/DA291C/FFFFFF?text=Spielberg+Circuit" alt="[Image of Red Bull Ring]">
+                <h2>Austrian Grand Prix</h2>
+                <p>Un tracciato panoramico in Austria, con salite e discese veloci.</p>
+                <a href="circuito-austria.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: BRITISH GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/000080/FFFFFF?text=Silverstone+Circuit" alt="[Image of Silverstone Circuit]">
+                <h2>British Grand Prix</h2>
+                <p>La casa spirituale della Formula 1, con curve iconiche e ad alta velocità.</p>
+                <a href="circuito-gran-bretagna.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: BELGIAN GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/006400/FFFFFF?text=Spa+Circuit" alt="[Image of Circuit de Spa-Francorchamps]">
+                <h2>Belgian Grand Prix</h2>
+                <p>Un leggendario tracciato tra le Ardenne, famoso per l'Eau Rouge e il meteo imprevedibile.</p>
+                <a href="circuito-belgio.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: HUNGARIAN GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/800080/FFFFFF?text=Hungaroring+Circuit" alt="[Image of Hungaroring]">
+                <h2>Hungarian Grand Prix</h2>
+                <p>Un circuito tortuoso e lento, spesso paragonato a una pista di kart oversize.</p>
+                <a href="circuito-ungheria.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: DUTCH GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/FF8C00/FFFFFF?text=Zandvoort+Circuit" alt="[Image of Zandvoort Circuit]">
+                <h2>Dutch Grand Prix</h2>
+                <p>Il circuito olandese con le sue iconiche curve paraboliche e l'atmosfera vibrante.</p>
+                <a href="circuito-olanda.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: GRAN PREMIO D'ITALIA 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/B30000/FFFFFF?text=Monza+Circuit" alt="[Image of Monza Circuit]">
+                <h2>Italian Grand Prix</h2>
+                <p>Il "Tempio della Velocità", uno dei tracciati più iconici e veloci del calendario.</p>
+                <a href="circuito-italia.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: AZERBAIJAN GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/000000/00FFFF?text=Baku+Circuit" alt="[Image of Baku City Circuit]">
+                <h2>Azerbaijan Grand Prix</h2>
+                <p>Un circuito stradale con un lungo rettilineo e un settore tecnico in città vecchia.</p>
+                <a href="circuito-azerbaigian.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: SINGAPORE F1 GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/000080/FFD700?text=Singapore+Circuit" alt="[Image of Marina Bay Street Circuit]">
+                <h2>Singapore Grand Prix</h2>
+                <p>Il primo GP notturno di F1, una sfida fisica e mentale sotto i riflettori.</p>
+                <a href="circuito-singapore.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: UNITED STATES GRAND PRIX F1 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/B30000/FFFFFF?text=Austin+Circuit" alt="[Image of Circuit of the Americas]">
+                <h2>United States Grand Prix</h2>
+                <p>Un circuito moderno e tecnico, con un'iconica salita alla curva 1.</p>
+                <a href="circuito-stati-uniti.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: GRAN PREMIO F1 DE MÉXICO 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/006400/FFFFFF?text=Mexico+Circuit" alt="[Image of Autódromo Hermanos Rodríguez]">
+                <h2>Mexico City Grand Prix</h2>
+                <p>Un tracciato ad alta quota, famoso per la sezione dello stadio e l'atmosfera unica.</p>
+                <a href="circuito-messico.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: GRANDE PRÊMIO F1 DE SÃO PAULO 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/008000/FFFFFF?text=Interlagos+Circuit" alt="[Image of Interlagos Circuit]">
+                <h2>São Paulo Grand Prix</h2>
+                <p>Un circuito storico con saliscendi, noto per le gare imprevedibili e i finali di stagione.</p>
+                <a href="circuito-brasile.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: F1 LAS VEGAS GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/FF00FF/000000?text=Las+Vegas+Circuit" alt="[Image of Las Vegas Strip Circuit]">
+                <h2>Las Vegas Grand Prix</h2>
+                <p>Un nuovo circuito stradale mozzafiato, che sfreccia attraverso la Strip di Las Vegas.</p>
+                <a href="circuito-las-vegas.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: FORMULA 1 QATAR GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/800000/FFFFFF?text=Lusail+Circuit" alt="[Image of Lusail International Circuit]">
+                <h2>Qatar Grand Prix</h2>
+                <p>Un circuito moderno in Qatar, con un lungo rettilineo e un'illuminazione spettacolare.</p>
+                <a href="circuito-qatar.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+            <!-- Scheda Circuito: ABU DHABI F1 GRAND PRIX 2025 -->
+            <div class="circuit-card">
+                <img src="https://placehold.co/400x180/000080/FFD700?text=Yas+Marina+Circuit" alt="[Image of Yas Marina Circuit]">
+                <h2>Abu Dhabi Grand Prix</h2>
+                <p>L'impressionante finale di stagione, con un circuito moderno e un hotel che lo attraversa.</p>
+                <a href="circuito-abu-dhabi.html" class="view-circuit-link">Vedi Dettagli Circuito</a>
+            </div>
+
+        </div>
+        
+        <a href="Untitled-1.html#ultimi" class="back-link">← Torna alla homepage</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

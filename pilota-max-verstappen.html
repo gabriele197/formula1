@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Max Verstappen - Red Bull Racing - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0D1B2A; /* Blu scuro per tema Red Bull */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #002240; /* Blu Red Bull più scuro */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #FF1E00; /* Rosso Red Bull */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #001A30; /* Blu Red Bull ancora più scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #003366;
+        }
+        nav a {
+            color: #FFD60A; /* Giallo Red Bull */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #1A314A; /* Blu intermedio per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #004080;
+        }
+        .article-content h1 {
+            color: #FF1E00; /* Rosso Red Bull */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #FFD60A; /* Giallo Red Bull */
+        }
+        .article-content h3 {
+            color: #FFD60A; /* Giallo Red Bull */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #FFD60A;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #FF1E00; /* Rosso Red Bull */
+            text-decoration: none;
+            border-bottom: 1px dashed #FF1E00;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #ff4d4d;
+            border-color: #ff4d4d;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #FFD60A; /* Giallo Red Bull */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FF1E00, #FF4D4D); /* Sfumatura Rosso Red Bull */
+            color: #0D1B2A; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FF4D4D, #FF7B7B);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #001A30; /* Blu Red Bull ancora più scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #003366;
+        }
+
+        /* Stili per le Tabelle */
+        .driver-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #2A3A4A; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .driver-stats th, .driver-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #3A4A5A; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .driver-stats th {
+            background-color: #FF1E00; /* Rosso Red Bull per l'intestazione */
+            color: #FFFFFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .driver-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .driver-stats tr:nth-child(even) {
+            background-color: #203040; /* Riga pari più scura */
+        }
+        .driver-stats tr:hover {
+            background-color: #3A4A5A; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .driver-stats td, .driver-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .driver-stats table, .driver-stats tbody, .driver-stats thead, .driver-stats tr, .driver-stats th, .driver-stats td {
+                display: block;
+                width: 100%;
+            }
+            .driver-stats thead {
+                display: none;
+            }
+            .driver-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #3A4A5A;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .driver-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .driver-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #FFD60A; /* Giallo anche per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Max Verstappen: Il Dominatore Olandese</h1>
+        <p>Max Verstappen, nato il 30 settembre 1997 a Hasselt, Belgio, ma con cittadinanza olandese, è un fenomeno della Formula 1 che ha riscritto i record e ridefinito il concetto di dominio. Figlio d'arte (suo padre Jos Verstappen è stato anch'esso pilota di F1), Max ha mostrato un talento precoce sin dai kart, dove ha vinto numerosi campionati prima di passare alle monoposto.</p>
+        
+        <p>Il suo debutto in Formula 1 nel 2015, all'età di soli 17 anni, con la Toro Rosso, ha segnato l'inizio di una carriera fulminante. La sua audacia, le manovre al limite e la capacità di estrarre il massimo dalla vettura lo hanno rapidamente distinto. La sua ascesa alla Red Bull Racing a metà stagione 2016 lo ha catapultato tra i grandi, vincendo la sua prima gara al debutto con il team, diventando il più giovane vincitore di un Gran Premio nella storia della F1.</p>
+
+        <img src="https://media.formula1.com/image/upload/f_auto/q_auto/v1741268879/content/dam/fom-website/drivers/2025Drivers/verstappen.png" alt="[Immagine di Max Verstappen in azione con la sua Red Bull]">
+        
+        <h3>Stile di Guida e Caratteristiche</h3>
+        <p>Il suo stile di guida è caratterizzato da un'aggressività implacabile, una precisione chirurgica e una fiducia quasi sconfinata nei propri mezzi. Max è noto per le sue staccate al limite e la capacità di controllare la vettura anche in condizioni di scarsa aderenza. La sua mentalità da "killer instinct" lo rende un avversario temibile in pista, sempre alla ricerca di ogni opportunità per superare.</p>
+        <ul>
+            <li>Aggressività Controllata: Capacità di spingere al limite senza perdere il controllo, sfruttando ogni spiraglio.</li>
+            <li>Frenate Estreme: Maestro nelle frenate in ingresso curva, spesso guadagnando posizioni in questo frangente.</li>
+            <li>Adattabilità: Rapidità nell'adattarsi a diverse condizioni di pista e configurazioni della vettura.</li>
+            <li>Mentalità Vincente: Forte determinazione e resilienza psicologica che lo rendono quasi imbattibile una volta in testa.</li>
+        </ul>
+
+        <h3>Statistiche Chiave e Traguardi (Aggiornati)</h3>
+        <div class="driver-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Risultato</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Debutto in F1</td>
+                        <td data-label="Risultato">Gran Premio d'Australia 2015</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Campionati del Mondo F1</td>
+                        <td data-label="Risultato">3 (2021, 2022, 2023)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vittorie in GP (ad oggi)</td>
+                        <td data-label="Risultato">59+</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Pole Position (ad oggi)</td>
+                        <td data-label="Risultato">39+</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Podii (ad oggi)</td>
+                        <td data-label="Risultato">104+</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Pilota più giovane a vincere un GP</td>
+                        <td data-label="Risultato">18 anni, 228 giorni</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vittorie consecutive in una stagione</td>
+                        <td data-label="Risultato">10 (record F1)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>I Momenti Salienti della Carriera</h3>
+        <p>Dalla sua prima vittoria mozzafiato in Spagna nel 2016, ai duelli epici con Lewis Hamilton nel 2021 che hanno culminato nel suo primo titolo mondiale, Max ha regalato agli appassionati momenti indimenticabili. La sua costante evoluzione come pilota lo ha portato a diventare una vera forza dominante in Formula 1, un simbolo di velocità e determinazione.</p>
+        
+
+        <h3>Segui Max Verstappen sui Social:</h3>
+        <p>
+            <a href="https://www.instagram.com/maxverstappen1/" target="_blank">Instagram di Max Verstappen</a> | 
+            <a href="https://twitter.com/Max33Verstappen" target="_blank">Twitter di Max Verstappen</a> | 
+            <a href="https://www.formula1.com/en/drivers/max-verstappen.html" target="_blank">Profilo F1 Ufficiale</a>
+        </p>
+        
+        <a href="piloti.html" class="back-link">← Torna agli articoli</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

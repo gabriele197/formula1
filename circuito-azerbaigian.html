@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baku - FormulaRacing</title>
+  <style>
+    body { margin:0; font-family:'Inter', sans-serif; background:#003030; color:#e0e0e0; line-height:1.6; }
+    header { background:#00A5CF; padding:25px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.4); }
+    header h1 { margin:0; font-size:3em; color:#fff; letter-spacing:2px; }
+    nav { background:#002626; padding:15px; display:flex; justify-content:center; border-bottom:2px solid #006060; flex-wrap:wrap; }
+    nav a { color:#00A5CF; margin:10px 20px; font-size:1.2em; font-weight:bold; text-decoration:none; transition:0.3s;}
+    nav a:hover { color:#fff; transform:translateY(-2px); }
+
+    .article-content { max-width:900px; margin:60px auto; padding:40px; background:#002626; border-radius:15px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.6); border:1px solid #00A5CF; }
+    .article-content h1 { color:#00A5CF; font-size:3.2em; margin-bottom:30px; text-align:center;
+      text-shadow:2px 2px 5px rgba(0,0,0,0.5); }
+    .article-content p { margin-bottom:25px; font-size:1.15em; color:#c9c9c9; }
+    .article-content img { max-width:100%; display:block; margin:40px auto; border-radius:12px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.4); border:2px solid #fff; }
+    .article-content h3 { color:#fff; margin:40px 0 20px; font-size:2em; border-bottom:1px solid #fff; padding-bottom:5px; }
+    .article-content ul { list-style:disc; margin-left:30px; margin-bottom:30px; color:#e0e0e0; font-size:1.1em; }
+    .article-content a { color:#00A5CF; text-decoration:none; border-bottom:1px dashed #00A5CF; transition:0.3s; }
+    .article-content a:hover { color:#8EEAF3; border-color:#8EEAF3; }
+
+    .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; margin:40px auto;
+      background:#000; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.6); border:2px solid #fff; }
+    .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
+    .back-link { display:inline-block; margin-top:50px; padding:15px 30px;
+      background:linear-gradient(45deg,#00A5CF,#3DD2E0); color:#000; text-decoration:none; border-radius:10px;
+      font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.3s;}
+    .back-link:hover { transform:translateY(-3px) scale(1.02); box-shadow:0 6px 15px rgba(0,0,0,0.5); }
+
+    footer { background:#002626; text-align:center; padding:25px; font-size:1em; color:#a0a0a0;
+      margin-top:60px; border-top:2px solid #006060; }
+
+    .circuit-stats table { width:100%; border-collapse:separate; border-spacing:0; margin:30px 0;
+      background:#003333; border-radius:10px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.4); }
+    .circuit-stats th, .circuit-stats td { padding:15px; text-align:left; border-bottom:1px solid #005050;
+      color:#e0e0e0; }
+    .circuit-stats th { background:#00A5CF; color:#000; font-weight:bold; text-transform:uppercase; }
+    .circuit-stats tr:nth-child(even) { background:#002b2b; }
+    .circuit-stats tr:hover { background:#005050; cursor:pointer; }
+
+    @media(max-width:768px){
+      header h1 { font-size:2.2em; }
+      nav a { margin:8px; font-size:1em; }
+      .article-content { margin:30px 15px; padding:20px; }
+      .article-content h1 { font-size:2em; }
+      .article-content p, ul, .circuit-stats th, td { font-size:1em; }
+      .back-link { padding:10px 20px; font-size:1em; }
+      .circuit-stats table, thead, tbody, tr, th, td { display:block; width:100%; }
+      .circuit-stats thead { display:none; }
+      .circuit-stats tr { margin-bottom:10px; border:1px solid #005050; border-radius:8px; overflow:hidden; }
+      .circuit-stats td { position:relative; padding-left:50%; text-align:right; }
+      .circuit-stats td::before { content:attr(data-label); position:absolute; left:10px;
+        width:calc(50% - 20px); text-align:left; font-weight:bold; color:#fff; }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>FormulaRacing</h1></header>
+  <nav>
+    <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a>
+  </nav>
+
+  <div class="article-content">
+    <h1>Circuito di Baku – Il GP dell'Azerbaigian</h1>
+
+    <p>Il <strong>Baku City Circuit</strong> è l’unico vero street‑circuit moderno dove i rettilinei si alternano a tratti angusti nella città vecchia. Utilizzato per la prima volta nel 2016 come Grand Prix d’Europa, dal 2017 ospita il GP dell’Azerbaigian.</p>
+
+    <p>Con i suoi <strong>6,003 km</strong>, 20 curve e una combinazione di lunghi rettilinei e strette vie medievali, è il quarto tracciato più lungo del calendario e sfida costantemente aerodinamica e meccanica.</p>
+
+    <img src="https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Baku_Circuit.png" alt="Baku City Circuit">
+
+    <h3>Punti Chiave</h3>
+    <ul>
+      <li><strong>Mix unico:</strong> da 2,2 km di rettilineo sul lungomare a curve cittadine di appena 7,6 m nel cuore storico.</li>
+      <li><strong>Altissime velocità:</strong> fino a 366 km/h registrati da Bottas nel 2016.</li>
+      <li><strong>Street tight:</strong> la sezione centrale passa tra mura antiche e vicoli, punendo errori minimi.</li>
+      <li><strong>Setup doppio:</strong> bilanciamento tra basso drag e downforce è fondamentale per affrontare i repentini cambi del tracciato.</li>
+    </ul>
+
+    <h3>Dati Tecnici</h3>
+    <div class="circuit-stats"><table>
+      <tr><th>Voce</th><th>Dettaglio</th></tr>
+      <tr><td data-label="Voce">Località</td><td data-label="Dettaglio">Baku, Azerbaijan</td></tr>
+      <tr><td data-label="Voce">Lunghezza</td><td data-label="Dettaglio">6.003 km</td></tr>
+      <tr><td data-label="Voce">Giri in gara</td><td data-label="Dettaglio">51</td></tr>
+      <tr><td data-label="Voce">Distanza totale</td><td data-label="Dettaglio">306.049 km</td></tr>
+      <tr><td data-label="Voce">Curve</td><td data-label="Dettaglio">20</td></tr>
+      <tr><td data-label="Voce">Primo GP F1</td><td data-label="Dettaglio">2016 (GP d’Europa) / 2017 (Azerbaigian)</td></tr>
+      <tr><td data-label="Voce">Record gara</td><td data-label="Dettaglio">1:43.009 – Charles Leclerc (2019).</td></tr>
+      <tr><td data-label="Voce">Velocità max</td><td data-label="Dettaglio">366 km/h (Bottas, 2016).</td></tr>
+    </table></div>
+
+    <h3>Momenti Recenti</h3>
+    <p>Nel GP 2024, <strong>Oscar Piastri</strong> ha centrato una vittoria avvincente dopo un duello con Leclerc, mentre <em>Max Verstappen</em> ha chiuso quinto. Charles ha conquistato la pole per il quarto anno consecutivo nel 2024.</p>
+
+    
+
+    <h3>Approfondimenti</h3>
+    <p>
+      <a href="https://it.wikipedia.org/wiki/Circuito_urbano_di_Bakou" target="_blank"><strong>Wiki – Circuito di Baku</strong></a> |
+      <a href="https://www.formula1.com/en/racing/2025/azerbaijan.html" target="_blank"><strong>Pagina ufficiale F1 Azerbaijan 2025</strong></a> |
+      <a href="https://en.wikipedia.org/wiki/Baku_City_Circuit" target="_blank"><strong>Info tecniche dettagliate</strong></a>
+    </p>
+
+    <a href="circuiti.html" class="back-link">← Torna a Circuiti</a>
+  </div>
+
+  <footer>&copy; 2025 FormulaRacing | Powered by Gabriele 🏁</footer>
+</body>
+</html>

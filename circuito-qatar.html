@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Monaco - FormulaRacing</title>
+  <style>
+    body { margin:0; font-family:'Inter',sans-serif; background:#00332E; color:#e0e0e0; line-height:1.6; }
+    header { background:#006644; padding:25px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.4); }
+    header h1 { margin:0; font-size:3em; color:#fff; letter-spacing:2px; }
+    nav { background:#00251F; padding:15px; display:flex; justify-content:center; flex-wrap:wrap; border-bottom:2px solid #004F3D; }
+    nav a { color:#006644; margin:10px 20px; font-size:1.2em; font-weight:bold; text-decoration:none; transition:0.3s; }
+    nav a:hover { color:#fff; transform:translateY(-2px); }
+
+    .article-content {
+      max-width:900px; margin:60px auto; padding:40px;
+      background:#00251F; border-radius:15px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.6); border:1px solid #006644;
+    }
+    .article-content h1 {
+      color:#006644; font-size:3.2em; margin-bottom:30px;
+      text-align:center; text-shadow:2px 2px 5px rgba(0,0,0,0.5);
+    }
+    .article-content p { margin-bottom:25px; font-size:1.15em; color:#c9c9c9; }
+    .article-content img {
+      max-width:100%; display:block; margin:40px auto;
+      border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.4);
+      border:2px solid #fff;
+    }
+    .article-content h3 {
+      color:#fff; margin:40px 0 20px; font-size:2em;
+      border-bottom:1px solid #fff; padding-bottom:5px;
+    }
+    .article-content ul {
+      list-style:disc; margin-left:30px; margin-bottom:30px;
+      color:#e0e0e0; font-size:1.1em;
+    }
+    .article-content a {
+      color:#006644; text-decoration:none;
+      border-bottom:1px dashed #006644; transition:0.3s;
+    }
+    .article-content a:hover { color:#8DEACC; border-color:#8DEACC; }
+
+    .video-container {
+      position:relative; padding-bottom:56.25%; height:0;
+      overflow:hidden; margin:40px auto; background:#000;
+      border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.6);
+      border:2px solid #fff;
+    }
+    .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
+    .back-link {
+      display:inline-block; margin-top:50px; padding:15px 30px;
+      background:linear-gradient(45deg,#006644,#00A070); color:#000;
+      text-decoration:none; border-radius:10px; font-weight:bold;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.3s;
+    }
+    .back-link:hover {
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:0 6px 15px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      background:#00251F; text-align:center; padding:25px;
+      font-size:1em; color:#a0a0a0; margin-top:60px;
+      border-top:2px solid #004F3D;
+    }
+
+    .circuit-stats table {
+      width:100%; border-collapse:separate; border-spacing:0;
+      margin:30px 0; background:#00332E; border-radius:10px;
+      overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.4);
+    }
+    .circuit-stats th, .circuit-stats td {
+      padding:15px; text-align:left; border-bottom:1px solid #004F3D;
+      color:#e0e0e0;
+    }
+    .circuit-stats th {
+      background:#006644; color:#000; font-weight:bold; text-transform:uppercase;
+    }
+    .circuit-stats tr:nth-child(even) { background:#002B29; }
+    .circuit-stats tr:hover { background:#004F3D; cursor:pointer; }
+
+    @media(max-width:768px){
+      header h1 { font-size:2.2em; }
+      nav a { margin:8px; font-size:1em; }
+      .article-content { margin:30px 15px; padding:20px; }
+      .article-content h1 { font-size:2em; }
+      .article-content p, ul, .circuit-stats th, td { font-size:1em; }
+      .back-link { padding:10px 20px; font-size:1em; }
+      .circuit-stats table, thead, tbody, tr, th, td { display:block; width:100%; }
+      .circuit-stats thead { display:none; }
+      .circuit-stats tr { margin-bottom:10px; border:1px solid #004F3D; border-radius:8px; overflow:hidden; }
+      .circuit-stats td { position:relative; padding-left:50%; text-align:right; }
+      .circuit-stats td::before { content:attr(data-label); position:absolute; left:10px; width:calc(50% - 20px); text-align:left; font-weight:bold; color:#fff; }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>FormulaRacing</h1></header>
+  <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a>
+  </nav>
+
+  <div class="article-content">
+    <h1>Circuit de Monaco – GP Monaco 2025</h1>
+
+    <p>Il <strong>Circuit de Monaco</strong> è senza dubbio uno dei tracciati più iconici e spettacolari del calendario di Formula 1. Con una lunghezza di soli <strong>3,337 km</strong>, il GP di Monaco rappresenta una sfida tecnica unica per piloti e team, data la sua conformazione cittadina con curve strette, muretti vicini e un’altissima richiesta di precisione.</p>
+
+    <p>Il tracciato si snoda tra le vie di Montecarlo, con la celebre curva del Casinò, la salita verso il Mirabeau e la curva della Piscina. La gara si disputa su <strong>78 giri</strong>, per una distanza totale di circa <strong>260,286 km</strong>.</p>
+
+    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Qatar_Circuit">
+
+    <h3>Punti Chiave</h3>
+    <ul>
+      <li><strong>Tracciato cittadino:</strong> alta difficoltà per il sorpasso, massima concentrazione richiesta.</li>
+      <li><strong>Curve strette e muretti:</strong> minimo margine di errore, rischio alto di incidenti e safety car.</li>
+      <li><strong>Setup:</strong> massima downforce e trazione per affrontare le curve lente.</li>
+      <li><strong>Fattore strategico:</strong> importanza del pit stop e della gestione pneumatici.</li>
+      <li><strong>Piloti di riferimento:</strong> Verstappen e Leclerc tra i favoriti per la vittoria nel 2024.</li>
+    </ul>
+
+    <h3>Dati Tecnici</h3>
+    <div class="circuit-stats"><table>
+      <tr><th>Voce</th><th>Dettaglio</th></tr>
+      <tr><td data-label="Voce">Località</td><td data-label="Dettaglio">Montecarlo, Monaco</td></tr>
+      <tr><td data-label="Voce">Lunghezza</td><td data-label="Dettaglio">3,337 km</td></tr>
+      <tr><td data-label="Voce">Giri</td><td data-label="Dettaglio">78</td></tr>
+      <tr><td data-label="Voce">Distanza gara</td><td data-label="Dettaglio">260,286 km</td></tr>
+      <tr><td data-label="Voce">Curve</td><td data-label="Dettaglio">19</td></tr>
+      <tr><td data-label="Voce">Primo GP</td><td data-label="Dettaglio">1929 (non F1), 1950 (F1)</td></tr>
+      <tr><td data-label="Voce">Record gara</td><td data-label="Dettaglio">1:14.260 – Lewis Hamilton, 2021</td></tr>
+      <tr><td data-label="Voce">Velocità max</td><td data-label="Dettaglio">290 km/h (massima)</td></tr>
+    </table></div>
+
+    <h3>Momenti Recenti (2024)</h3>
+    <p>Nel GP Monaco 2024, <strong>Charles Leclerc</strong> ha conquistato una vittoria emozionante davanti a <strong>Max Verstappen</strong>, mentre <strong>Lando Norris</strong> ha completato il podio. La gara è stata segnata da numerosi incidenti e safety car, tipici di questo circuito.</p>
+
+    
+
+    <h3>Risorse Utili</h3>
+    <p>
+      <a href="https://it.wikipedia.org/wiki/Gran_Premio_di_Monaco" target="_blank"><strong>Wiki – GP Monaco</strong></a> |
+      <a href="https://www.formula1.com/en/racing/2025/Monaco.html" target="_blank"><strong>Scheda F1 Monaco 2025</strong></a> |
+      <a href="https://www.monaco-grand-prix.com/" target="_blank"><strong>Sito ufficiale GP Monaco</strong></a>
+    </p>
+
+    <a href="circuiti.html" class="back-link">← Torna a Circuiti</a>
+  </div>
+
+  <footer>&copy; 2025 FormulaRacing | Powered by Gabriele 🏁</footer>
+</body>
+</html>

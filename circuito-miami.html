@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Miami - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #000033; /* Blu scuro profondo per il tema notturno/oceanico */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #FF8000; /* Arancione Papaya, colore vivace di Miami */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #FFFFFF; /* Bianco */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #000022; /* Blu ancora più scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #000044;
+        }
+        nav a {
+            color: #FFD60A; /* Giallo brillante */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #000044; /* Blu scuro/viola per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #FF8000; /* Bordo arancione Papaya */
+        }
+        .article-content h1 {
+            color: #FF8000; /* Arancione Papaya */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #FFD60A; /* Giallo brillante */
+        }
+        .article-content h3 {
+            color: #FFD60A; /* Giallo brillante */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #FFD60A;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #FFD60A; /* Giallo brillante */
+            text-decoration: none;
+            border-bottom: 1px dashed #FFD60A;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #FFFFFF;
+            border-color: #FFFFFF;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #FFD60A; /* Giallo brillante */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna ai circuiti" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FF8000, #FFB366); /* Sfumatura Arancione Papaya */
+            color: #FFFFFF; /* Testo bianco per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FFB366, #FFCC99);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #000022; /* Blu ancora più scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #000044;
+        }
+
+        /* Stili per le Tabelle */
+        .circuit-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #000055; /* Blu scuro per la tabella */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .circuit-stats th, .circuit-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #000066; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .circuit-stats th {
+            background-color: #FF8000; /* Arancione Papaya per l'intestazione */
+            color: #FFFFFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .circuit-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .circuit-stats tr:nth-child(even) {
+            background-color: #000040; /* Riga pari più scura */
+        }
+        .circuit-stats tr:hover {
+            background-color: #000066; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .circuit-stats td, .circuit-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .circuit-stats table, .circuit-stats tbody, .circuit-stats thead, .circuit-stats tr, .circuit-stats th, .circuit-stats td {
+                display: block;
+                width: 100%;
+            }
+            .circuit-stats thead {
+                display: none;
+            }
+            .circuit-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #000066;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .circuit-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .circuit-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #FFD60A; /* Giallo brillante per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Gran Premio di Miami: L'Energia Vibrante della Florida</h1>
+        <p>Il Miami International Autodrome ha fatto il suo debutto nel calendario di Formula 1 nel 2022, portando l'emozione della F1 nel cuore della Florida. Costruito attorno all'Hard Rock Stadium, casa dei Miami Dolphins, il circuito è un tracciato temporaneo ma impressionante, progettato per offrire gare spettacolari e un'atmosfera da festa tipica di Miami.</p>
+        
+        <p>Il circuito presenta 19 curve e tre lunghi rettilinei che promettono alte velocità e molteplici opportunità di sorpasso, inclusa una lunga sequenza di curve veloci tra T4 e T8 e una chicane lenta e tecnica alle T14-T15. La sua combinazione di sezioni veloci e tecniche richiede un setup equilibrato, mentre il clima caldo e umido della Florida mette alla prova la resistenza dei piloti e la gestione termica delle monoposto.</p>
+
+        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Miami_Circuit" alt="[Immagine del Miami International Autodrome]">
+        
+        <h3>Caratteristiche e Sfide Tecniche</h3>
+        <p>Il Gran Premio di Miami è una tappa che combina velocità, precisione e l'atmosfera unica di una grande città americana.</p>
+        <ul>
+            <li>Layout Semipermanente: Costruito attorno all'Hard Rock Stadium, con sezioni permanenti e temporanee.</li>
+            <li>Mix di Velocità e Tecnica: Lungo rettilineo principale e un altro dopo la curva 16, bilanciati da sezioni più tecniche e lente.</li>
+            <li>Zona Chicane (T14-T15): Una stretta e complessa chicane che richiede precisione e offre opportunità di sorpasso.</li>
+            <li>Caldo e Umidità: Le condizioni climatiche della Florida possono stressare piloti e vetture, influenzando la gestione degli pneumatici e la strategia di gara.</li>
+            <li>Carico Aerodinamico: Richiede un setup da medio a basso carico aerodinamico per massimizzare la velocità sui rettilinei.</li>
+        </ul>
+
+        <h3>Statistiche Chiave del Circuito</h3>
+        <div class="circuit-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Località</td>
+                        <td data-label="Dettaglio">Miami Gardens, Florida, USA</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Lunghezza Circuito</td>
+                        <td data-label="Dettaglio">5.410 km (3.362 miglia)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Numero di Giri (F1)</td>
+                        <td data-label="Dettaglio">57</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Record sul Giro (gara)</td>
+                        <td data-label="Dettaglio">1:29.708 (Max Verstappen, Red Bull, 2023)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Curve</td>
+                        <td data-label="Dettaglio">19</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Prima Edizione GP F1</td>
+                        <td data-label="Dettaglio">2022</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Caratteristica Unica</td>
+                        <td data-label="Dettaglio">Situato attorno all'Hard Rock Stadium</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>L'Atmosfera e l'Impatto Culturale</h3>
+        <p>Il Gran Premio di Miami è più di una semplice gara; è un evento che fonde il glamour della Formula 1 con l'energia e lo stile di vita di Miami. L'atmosfera è vibrante, con celebrità e fan che si affollano per godersi lo spettacolo dentro e fuori dalla pista. Ha contribuito a espandere l'interesse per la F1 negli Stati Uniti, offrendo gare ricche di azione e un'esperienza complessiva unica nel suo genere.</p>
+        
+        
+
+        <h3>Risorse Aggiuntive:</h3>
+        <p>
+            <a href="https://it.wikipedia.org/wiki/Miami_International_Autodrome" target="_blank">Miami International Autodrome su Wikipedia</a> | 
+            <a href="https://f1miamigp.com/" target="_blank">Sito Ufficiale Miami Grand Prix</a>
+        </p>
+        
+        <a href="circuiti.html" class="back-link">← Torna all'elenco dei Circuiti</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

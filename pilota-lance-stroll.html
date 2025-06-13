@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lance Stroll - Aston Martin F1 Team - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #001A0A; /* Verde scuro per tema Aston Martin */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #00331A; /* Verde Aston Martin */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #C0C0C0; /* Argento */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #002211; /* Verde più scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #004422;
+        }
+        nav a {
+            color: #C0C0C0; /* Argento */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #002A10; /* Verde scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #00331A; /* Verde Aston Martin */
+        }
+        .article-content h1 {
+            color: #C0C0C0; /* Argento */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #C0C0C0; /* Argento */
+        }
+        .article-content h3 {
+            color: #C0C0C0; /* Argento */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #C0C0C0;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #C0C0C0; /* Argento */
+            text-decoration: none;
+            border-bottom: 1px dashed #C0C0C0;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #FFFFFF;
+            border-color: #FFFFFF;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #C0C0C0; /* Argento */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00331A, #004422); /* Sfumatura Verde Aston Martin */
+            color: #FFFFFF; /* Testo bianco per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #004422, #005533);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #002211; /* Verde più scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #004422;
+        }
+
+        /* Stili per le Tabelle */
+        .driver-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #00381C; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .driver-stats th, .driver-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #004A25; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .driver-stats th {
+            background-color: #00331A; /* Verde Aston Martin per l'intestazione */
+            color: #C0C0C0;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .driver-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .driver-stats tr:nth-child(even) {
+            background-color: #002D17; /* Riga pari più scura */
+        }
+        .driver-stats tr:hover {
+            background-color: #004A25; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .driver-stats td, .driver-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .driver-stats table, .driver-stats tbody, .driver-stats thead, .driver-stats tr, .driver-stats th, .driver-stats td {
+                display: block;
+                width: 100%;
+            }
+            .driver-stats thead {
+                display: none;
+            }
+            .driver-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #004A25;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .driver-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .driver-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #C0C0C0; /* Argento per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Lance Stroll: La Costanza Canadese in Aston Martin</h1>
+        <p>Lance Stroll, nato il 29 ottobre 1998 a Montreal, Canada, è un pilota con un percorso unico in Formula 1. Dopo aver vinto il Campionato Europeo FIA Formula 3 nel 2016, ha fatto il suo debutto in F1 nel 2017 con la Williams. La sua carriera è indissolubilmente legata al team di proprietà di suo padre, Lawrence Stroll, che è stato prima Force India/Racing Point e ora Aston Martin F1 Team.</p>
+        
+        <p>Lance ha dimostrato di avere lampi di velocità e la capacità di capitalizzare le opportunità in condizioni caotiche, come i suoi podi in Italia nel 2020 e la sorprendente pole position in Turchia nello stesso anno. La sua esperienza e la sua familiarità con il team lo rendono un elemento stabile nel progetto Aston Martin, al fianco di Fernando Alonso.</p>
+
+        <img src="https://www.valvolineglobal.com/4923e7/globalassets/vcom/racing--sponsorships/amf1/fernando-alonso/stroll_2024.jpg" alt="[Immagine di Lance Stroll alla guida della sua Aston Martin]">
+        
+        <h3>Stile di Guida e Punti di Forza</h3>
+        <p>Stroll è noto per la sua capacità di adattarsi rapidamente a condizioni mutevoli, in particolare sul bagnato o in situazioni di scarsa aderenza. È un pilota che spesso sorprende con prestazioni solide quando meno ci si aspetta, e ha dimostrato una buona resistenza in gara. La sua continuità nel team lo ha aiutato a sviluppare una profonda comprensione della vettura.</p>
+        <ul>
+            <li>Guidare sul Bagnato: Particolarmente forte in condizioni di pista bagnata o scivolosa, dove spesso riesce a estrarre il massimo.</li>
+            <li>Capitalizzare Opportunità: Bravo a sfruttare il caos, le Safety Car e le bandiere rosse per guadagnare posizioni inaspettate.</li>
+            <li>Lavoro di Squadra: Contribuisce allo sviluppo del team con il suo feedback e la sua conoscenza approfondita della vettura.</li>
+            <li>Resistenza: Spesso conclude le gare in modo consistente, evitando errori e massimizzando il risultato.</li>
+        </ul>
+
+        <h3>Statistiche Chiave e Traguardi in F1</h3>
+        <div class="driver-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Risultato / Anno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Debutto in F1</td>
+                        <td data-label="Risultato / Anno">Gran Premio d'Australia 2017</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Primo Podio F1</td>
+                        <td data-label="Risultato / Anno">Gran Premio dell'Azerbaigian 2017</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Prima Pole Position F1</td>
+                        <td data-label="Risultato / Anno">Gran Premio di Turchia 2020</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Podi in F1 (ad oggi)</td>
+                        <td data-label="Risultato / Anno">3</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vittorie in GP (ad oggi)</td>
+                        <td data-label="Risultato / Anno">0</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Campione Europeo FIA Formula 3</td>
+                        <td data-label="Risultato / Anno">2016</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Team Attuale</td>
+                        <td data-label="Risultato / Anno">Aston Martin Aramco F1 Team</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Il Ruolo in Aston Martin e il Futuro</h3>
+        <p>Lance Stroll è un elemento fondamentale per il progetto a lungo termine di Aston Martin. La sua presenza garantisce stabilità e continuità al team, mentre si sforza di scalare la griglia verso le posizioni di vertice. Al fianco di un compagno di squadra esperto e pluricampione come Fernando Alonso, Stroll continua a lavorare per migliorare le sue prestazioni e aiutare Aston Martin a competere per le vittorie e, in futuro, per il titolo mondiale, consolidando il suo ruolo nella squadra di famiglia.</p>
+        
+
+        <h3>Segui Lance Stroll sui Social:</h3>
+        <p>
+            <a href="https://www.instagram.com/lancestroll/" target="_blank">Instagram di Lance Stroll</a> | 
+            <a href="https://twitter.com/lance_stroll" target="_blank">Twitter di Lance Stroll</a> | 
+            <a href="https://www.formula1.com/en/drivers/lance-stroll.html" target="_blank">Profilo F1 Ufficiale</a>
+        </p>
+        
+        <a href="piloti.html" class="back-link">← Torna agli articoli</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

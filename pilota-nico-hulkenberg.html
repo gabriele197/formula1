@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Nico Hülkenberg - Sauber/Audi F1 Team - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0A0A0A; /* Nero profondo */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #808080; /* Grigio medio per tema Sauber/Audi */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #FFD700; /* Oro per contrasto */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #000000; /* Nero */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #5C5C5C;
+        }
+        nav a {
+            color: #BBBBBB; /* Grigio chiaro */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #1A1A1A; /* Grigio scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #808080; /* Grigio medio */
+        }
+        .article-content h1 {
+            color: #FFD700; /* Oro */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #BBBBBB; /* Grigio chiaro */
+        }
+        .article-content h3 {
+            color: #BBBBBB; /* Grigio chiaro */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #BBBBBB;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #FFD700; /* Oro */
+            text-decoration: none;
+            border-bottom: 1px dashed #FFD700;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #FFE566;
+            border-color: #FFE566;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #BBBBBB; /* Grigio chiaro */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #808080, #A0A0A0); /* Sfumatura Grigia */
+            color: #0A0A0A; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #A0A0A0, #C0C0C0);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #000000; /* Nero */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #5C5C5C;
+        }
+
+        /* Stili per le Tabelle */
+        .driver-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #2A2A2A; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .driver-stats th, .driver-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #3A3A3A; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .driver-stats th {
+            background-color: #808080; /* Grigio medio per l'intestazione */
+            color: #FFFFFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .driver-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .driver-stats tr:nth-child(even) {
+            background-color: #202020; /* Riga pari più scura */
+        }
+        .driver-stats tr:hover {
+            background-color: #3A3A3A; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .driver-stats td, .driver-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .driver-stats table, .driver-stats tbody, .driver-stats thead, .driver-stats tr, .driver-stats th, .driver-stats td {
+                display: block;
+                width: 100%;
+            }
+            .driver-stats thead {
+                display: none;
+            }
+            .driver-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #3A3A3A;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .driver-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .driver-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #BBBBBB; /* Grigio chiaro per i label mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a>
+    </nav>
+
+    <div class="article-content">
+        <h1>Nico Hülkenberg: Il Pilota di Riferimento per Audi</h1>
+        <p>Nico Hülkenberg, nato il 19 agosto 1987 a Emmerich am Rhein, Germania, è uno dei piloti più esperti e rispettati della Formula 1. Conosciuto per la sua velocità pura e la sua capacità di estrarre il massimo da vetture di metà griglia, Nico ha avuto una carriera lunga e ricca di successi nelle categorie junior, vincendo la GP2 Series al primo tentativo nel 2009.</p>
+        
+        <p>Il suo debutto in F1 è avvenuto nel 2010 con la Williams, dove ha subito mostrato il suo potenziale conquistando una sorprendente pole position in Brasile. Da allora, ha gareggiato per diversi team tra cui Force India, Sauber, Renault e Haas, diventando una presenza costante in griglia e un punto di riferimento per lo sviluppo delle vetture. Il suo prossimo capitolo con il team Sauber che diventerà Audi nel 2026 lo vede come un elemento chiave per il futuro.</p>
+
+        <img src="https://cdn-9.motorsport.com/images/mgl/0RrX8LO0/s8/nico-hulkenberg-stake-f1-team.jpg" alt="[Immagine di Nico Hülkenberg in azione]">
+        
+        <h3>Stile di Guida e Esperienza</h3>
+        <p>Hülkenberg è celebre per la sua guida pulita e la sua capacità di adattarsi rapidamente a diverse condizioni e vetture. È un pilota molto tecnico, capace di fornire feedback precisi agli ingegneri per lo sviluppo. La sua vasta esperienza in diversi team lo rende un asset prezioso, soprattutto in un progetto a lungo termine come quello di Audi.</p>
+        <ul>
+            <li>Consistenza: Raramente commette errori, portando a casa il risultato in modo affidabile.</li>
+            <li>Velocità Adattiva: Veloce su ogni tipo di circuito e in diverse condizioni climatiche, dimostrando grande versatilità.</li>
+            <li>Feedback Tecnico: Estremamente prezioso per lo sviluppo della vettura, grazie alla sua profonda comprensione tecnica.</li>
+            <li>Esperienza: Anni di gare ad alto livello lo rendono un pilota maturo, affidabile e in grado di gestire situazioni complesse.</li>
+        </ul>
+
+        <h3>Statistiche Chiave e Traguardi in F1</h3>
+        <div class="driver-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce</th>
+                        <th>Risultato / Anno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Voce">Debutto in F1</td>
+                        <td data-label="Risultato / Anno">Gran Premio del Bahrain 2010</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Prima Pole Position F1</td>
+                        <td data-label="Risultato / Anno">Gran Premio del Brasile 2010</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vittorie in GP (ad oggi)</td>
+                        <td data-label="Risultato / Anno">0</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Podi in F1 (ad oggi)</td>
+                        <td data-label="Risultato / Anno">0</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Vincitore 24 Ore di Le Mans</td>
+                        <td data-label="Risultato / Anno">2015 (con Porsche)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Campione GP2 Series</td>
+                        <td data-label="Risultato / Anno">2009</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Voce">Team Attuale (2025)</td>
+                        <td data-label="Risultato / Anno">Sauber (futura Audi)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Il Ruolo Chiave nel Progetto Audi</h3>
+        <p>Il passaggio di Nico Hülkenberg al team Sauber, in vista della trasformazione in Audi nel 2026, lo posiziona come il pilota di punta e di riferimento per il futuro della casa automobilistica tedesca in Formula 1. La sua esperienza nello sviluppo e la sua capacità di estrarre il massimo da ogni pacchetto saranno cruciali per la crescita del nuovo progetto Audi F1, con l'obiettivo di competere per le posizioni di vertice e di costruire una squadra solida e vincente nel lungo termine.</p>
+        
+        
+
+        <h3>Segui Nico Hülkenberg sui Social:</h3>
+        <p>
+            <a href="https://www.instagram.com/hulkenberg/" target="_blank">Instagram di Nico Hülkenberg</a> | 
+            <a href="https://twitter.com/HulkHulkenberg" target="_blank">Twitter di Nico Hülkenberg</a> | 
+            <a href="https://www.formula1.com/en/drivers/nico-hulkenberg.html" target="_blank">Profilo F1 Ufficiale</a>
+        </p>
+        
+        <a href="piloti.html" class="back-link">← Torna agli articoli</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>

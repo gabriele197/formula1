@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Oscar Piastri - McLaren F1 Team - FormulaRacing</title>
+    <style>
+        /* Stili Generali del Corpo */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0D0D1A; /* Blu scuro quasi nero, per tema McLaren */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        /* Stili Header */
+        header {
+            background: #FF8000; /* Arancione Papaya McLaren */
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #1A1A2A; /* Testo scuro su arancione */
+            letter-spacing: 2px;
+        }
+        /* Stili Navigazione */
+        nav {
+            background: #0A0A15; /* Blu molto scuro */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #33334A;
+        }
+        nav a {
+            color: #FFD60A; /* Giallo brillante */
+            text-decoration: none;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 0;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        /* Stili specifici per il Contenuto dell'Articolo */
+        .article-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #1A1A2A; /* Sfondo scuro per il contenuto */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 1px solid #FF8000; /* Bordo arancione Papaya */
+        }
+        .article-content h1 {
+            color: #FF8000; /* Arancione Papaya */
+            font-size: 3.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .article-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #c9c9c9;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 2px solid #FFD60A; /* Giallo brillante */
+        }
+        .article-content h3 {
+            color: #FFD60A; /* Giallo brillante */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 1px solid #FFD60A;
+            padding-bottom: 5px;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            padding-left: 10px;
+        }
+        .article-content ul li {
+            margin-bottom: 12px;
+        }
+        /* Stile per i link INTERNI al contenuto dell'articolo */
+        .article-content a {
+            color: #FF8000; /* Arancione Papaya */
+            text-decoration: none;
+            border-bottom: 1px dashed #FF8000;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #ff9933;
+            border-color: #ff9933;
+        }
+        /* Stili per il Contenitore del Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 40px auto;
+            background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border: 2px solid #FFD60A; /* Giallo brillante */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Stile per il link "Torna agli articoli" */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FF8000, #FF9933); /* Sfumatura Arancione Papaya */
+            color: #0D0D1A; /* Testo scuro per contrasto */
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .back-link:hover {
+            background: linear-gradient(45deg, #FF9933, #FFB366);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+        }
+        /* Stili Footer */
+        footer {
+            background: #0A0A15; /* Blu molto scuro */
+            text-align: center;
+            padding: 25px;
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-top: 60px;
+            border-top: 2px solid #33334A;
+        }
+
+        /* Stili per le Tabelle */
+        .driver-stats table {
+            width: 100%;
+            border-collapse: separate; /* Per border-radius su table */
+            border-spacing: 0;
+            margin: 30px 0;
+            background-color: #2A2A3A; /* Sfondo tabella scuro */
+            border-radius: 10px;
+            overflow: hidden; /* Per arrotondare gli angoli */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .driver-stats th, .driver-stats td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #3A3A4A; /* Bordo tra le righe */
+            color: #e0e0e0;
+        }
+        .driver-stats th {
+            background-color: #FF8000; /* Arancione Papaya per l'intestazione */
+            color: #1A1A2A;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .driver-stats tr:last-child td {
+            border-bottom: none; /* Rimuove il bordo dall'ultima riga */
+        }
+        .driver-stats tr:nth-child(even) {
+            background-color: #202030; /* Riga pari più scura */
+        }
+        .driver-stats tr:hover {
+            background-color: #3A3A4A; /* Effetto hover sulla riga */
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            nav a { margin: 8px 10px; font-size: 1em; }
+            .article-content { margin: 30px 15px; padding: 20px; }
+            .article-content h1 { font-size: 2em; }
+            .article-content p, .article-content ul, .driver-stats td, .driver-stats th { font-size: 1em; }
+            .article-content h3 { font-size: 1.5em; }
+            .back-link { padding: 10px 20px; font-size: 1em; }
+            footer { padding: 15px; }
+            .driver-stats table, .driver-stats tbody, .driver-stats thead, .driver-stats tr, .driver-stats th, .driver-stats td {
+                display: block;
+                width: 100%;
+            }
+            .driver-stats thead {
+                display: none;
+            }
+            .driver-stats tr {
+                margin-bottom: 10px;
+                border: 1px solid #3A3A4A;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .driver-stats td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .driver-stats td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                text-align: left;
+                font-weight: bold;
+                color: #FFD60A;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FormulaRacing</h1>
+    </header>
+
+    <nav>
+        <a href="index.html#ultimi"> <a href="Untitled-1.html#ultimi">Ultimi articoli</a> </a>
+        <a href="piloti.html">Piloti</a>      
+        <a href="circuiti.html">Circuiti</a>  
+        <a href="storia_f1.html">Storia F1</a>
+        <a href="tecnologia.html"> <a href="tecnologia.html">Tecnologia</a> </a> 
+    </nav>
+
+    <div class="article-content">
+        <h1>Oscar Piastri: Il Talento Australiano in Ascesa</h1>
+        <p>Oscar Piastri, nato il 6 aprile 2001 a Melbourne, Australia, è rapidamente emerso come uno dei talenti più promettenti della Formula 1. Con un percorso giovanile costellato di successi, vincendo campionati consecutivi in Formula Renault Eurocup, Formula 3 e Formula 2, Piastri ha dimostrato una maturità e una velocità impressionanti fin dalle prime battute della sua carriera.</p>
+        
+        <p>Il suo debutto in Formula 1 nel 2023 con la McLaren è stato attesissimo, e non ha deluso le aspettative. Con una calma insolita per un rookie, Oscar ha mostrato una capacità di apprendimento rapida e una consistenza notevole, riuscendo a mettere sotto pressione persino il suo compagno di squadra più esperto, Lando Norris. La sua stagione d'esordio è stata segnata da prestazioni solide e alcuni momenti salienti, come il podio nella Sprint Race in Belgio e nel Gran Premio del Giappone.</p>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51B4hg_2ZFohusbXpJkdhd76szzRTzuln8m1rSOGPLwGNa3uQaM_vDOq4nz1q9gxiUR0&usqp=CAU" alt="[Immagine di Oscar Piastri con la sua McLaren]">
+        
+        <h3>Stile di Guida e Punti di Forza</h3>
+        <p>Piastri è conosciuto per il suo approccio metodico e la sua notevole intelligenza in pista. È un pilota che analizza rapidamente i dati e si adatta alle condizioni, minimizzando gli errori. La sua capacità di gestire le gomme e di massimizzare il potenziale della vettura nel corso di una gara lo rende un avversario formidabile, soprattutto la domenica.</p>
+        <ul>
+            <li>Intelligenza Tattica: Eccellente nel capire la strategia di gara e nel gestire le gomme.</li>
+            <li>Consistenza: Capace di mantenere un ritmo elevato senza commettere errori.</li>
+            <li>Adattabilità: Si adatta rapidamente a nuove piste e condizioni variabili.</li>
+            <li>Feedback Tecnico: Fornisce input preziosi agli ingegneri per lo sviluppo della vettura.</li>
+        </ul>
+
+        <h3>Statistiche Chiave e Traguardi</h3>
+        <div class="driver-stats">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoria / Evento</th>
+                        <th>Risultato / Anno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoria / Evento">Debutto in F1</td>
+                        <td data-label="Risultato / Anno">Gran Premio del Bahrain 2023</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Primo Podio (Sprint Race)</td>
+                        <td data-label="Risultato / Anno">Gran Premio del Belgio 2023</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Primo Podio (Gran Premio)</td>
+                        <td data-label="Risultato / Anno">Gran Premio del Giappone 2023</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Campione FIA F3</td>
+                        <td data-label="Risultato / Anno">2020</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Campione FIA F2</td>
+                        <td data-label="Risultato / Anno">2021</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Vittorie in F1 (ad oggi)</td>
+                        <td data-label="Risultato / Anno">0</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoria / Evento">Podi in F1 (ad oggi)</td>
+                        <td data-label="Risultato / Anno">2+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Il Futuro in Formula 1</h3>
+        <p>Con un contratto a lungo termine con la McLaren, Oscar Piastri è destinato a essere uno dei pilastri del team per gli anni a venire. La sua progressione costante e la sua determinazione lo rendono un candidato serio per future vittorie e, potenzialmente, per la lotta al campionato del mondo. La partnership con Lando Norris forma una delle coppie più giovani e talentuose della griglia.</p>
+        
+
+        <h3>Segui Oscar Piastri sui Social:</h3>
+        <p>
+            <a href="https://www.instagram.com/oscarpiastri/" target="_blank">Instagram di Oscar Piastri</a> | 
+            <a href="https://twitter.com/OscarPiastri" target="_blank">Twitter di Oscar Piastri</a> | 
+            <a href="https://www.formula1.com/en/drivers/oscar-piastri.html" target="_blank">Profilo F1 Ufficiale</a>
+        </p>
+        
+        <a href="piloti.html" class="back-link">← Torna agli articoli</a>
+    </div>
+
+    <footer>
+        &copy; 2025 FormulaRacing | Powered by Gabriele 🏁
+    </footer>
+</body>
+</html>
